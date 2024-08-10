@@ -6,10 +6,7 @@ function App() {
 
   return (
     <>
-      {/* <Form /> */}
       <Home />
-      {/* <Home1 /> */}
-      <EventSlider />
     </>
   )
 }

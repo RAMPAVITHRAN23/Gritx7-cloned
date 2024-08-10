@@ -88,7 +88,9 @@ function EventSlider() {
 
     return (
         <div>
-            <div className="logo">EVENTS</div>
+            <header className="logo">
+                <div className='text-4xl'>EVENTS</div>
+            </header>
             <div className={`carousel ${showDetail ? 'showDetail' : ''}`} ref={carouselRef}>
                 <div className={`list ${showDetail ? 'showDetail' : ''}`} style={{ transform: `translateX(-${currentIndex * 100}%)` }} ref={listRef}>
                     {items.map((item, index) => (
@@ -112,7 +114,6 @@ function EventSlider() {
                 <div className="arrows">
                     <button id="prev" ref={prevButtonRef}>&lt;</button>
                     <button id="next" ref={nextButtonRef}>&gt;</button>
-                    <button id="back" ref={backButtonRef}>see all &#8599;</button>
                 </div>
             </div>
         </div>
