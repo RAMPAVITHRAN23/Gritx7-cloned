@@ -63,7 +63,7 @@ function Home() {
             </div>
 
             {/* Navbar section */}
-            <nav className={`transition-transform duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 bg-[#1D1D1F] text-white py-5 z-50' : 'absolute top-[90vh] left-0 right-0 bg-[#1D1D1F] text-white py-5'}`}>
+            <nav className={`transition-transform duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 bg-[#1D1D1F] text-white py-4 z-50' : 'absolute top-[90vh] left-0 right-0 bg-[#1D1D1F] text-white py-4'}`}>
                 <div className="container mx-auto flex items-center justify-between">
                     <div className="flex-shrink-0">
                         <h1 className="text-white">Gritx 7.0</h1>
@@ -165,7 +165,7 @@ function Home() {
             </nav >
 
             {/* About GRITX 7.0 SECTION */}
-            <section className={`px-10 py-20 bg-gray-800 md:pt-32 ${styles.aboutUs}`}>
+            <section className={`px-12 py-20 md:pt-32 ${styles.aboutUs}`}>
                 <div className='flex flex-col md:flex-row items-center'>
                     <div className='w-full md:w-[40%] flex justify-center order-1 md:order-2'>
                         <img className={styles.aboutLogo} src="https://ik.imagekit.io/xetccow0b/phenoix2-removebg-preview.png?updatedAt=1723310421800" alt="Gritx Logo" />
@@ -177,7 +177,9 @@ function Home() {
                             Sairam NSS proudly presents an eagerly awaited occasion, an opportunity to savor the sheer joy of celebrating our commitment to service! Join us as we mark the grand spectacle -GRITX 6.0, offering a diverse array of exclusive events and demanding challenges. Here's your chance to shine by showcasing your unique talents for the surprises and twists that await. We extend a warm invitation to join us in honoring the glory of the noble service we provide through NSS. Our lineup of events will put your wit to the test and measure your grit to succeed. Save the date, put your best foot forward, and show us what you've got! Prepare yourself to seize the well-earned rewards that await. Let's make this celebration an unforgettable experience!
                         </p>
                     </div>
+
                 </div>
+
             </section>
 
 

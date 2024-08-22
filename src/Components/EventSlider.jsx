@@ -87,9 +87,9 @@ function EventSlider() {
     }, [showDetail]);
 
     return (
-        <div>
+        <div className='Events'>
             <header className="logo">
-                <div className='text-4xl'>EVENTS</div>
+                <div className='text-3xl font-bold text-white'>EVENTS</div>
             </header>
             <div className={`carousel ${showDetail ? 'showDetail' : ''}`} ref={carouselRef}>
                 <div className={`list ${showDetail ? 'showDetail' : ''}`} style={{ transform: `translateX(-${currentIndex * 100}%)` }} ref={listRef}>
@@ -97,9 +97,8 @@ function EventSlider() {
                         <div className="item" key={index}>
                             <img src={item.img} alt={item.topic} />
                             <div className={`introduce ${showDetail ? 'showDetail' : ''}`}>
-                                <div className="topic">{item.topic}</div>
-                                <div className="des">{item.des}</div>
-                                <button className="seeMore">SEE MORE &#8599;</button>
+                                <div className="topic text-white">{item.topic}</div>
+                                <div className="des text-white">{item.des}</div>
                             </div>
                             <div className={`detail ${showDetail ? 'showDetail' : ''}`}>
                                 <div className="title">RULES & REGULATIONS</div>
@@ -112,8 +111,8 @@ function EventSlider() {
                     ))}
                 </div>
                 <div className="arrows">
-                    <button id="prev" ref={prevButtonRef}>&lt;</button>
-                    <button id="next" ref={nextButtonRef}>&gt;</button>
+                    <button id="prev" className='text-white' ref={prevButtonRef}>&lt;</button>
+                    <button id="next" className='text-white' ref={nextButtonRef}>&gt;</button>
                 </div>
             </div>
         </div>
