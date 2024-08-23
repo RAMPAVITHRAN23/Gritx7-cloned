@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 import EventSlider from '../../Components/EventSlider';
 import Footer from '../../Components/Footer';
@@ -79,12 +80,13 @@ function Home() {
                                 </a>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     className={`text-white block py-2 px-4 border-2 ${activeLink === 'Events' ? 'border-white' : 'border-transparent'} rounded-md`}
                                     onClick={() => handleClick('Events')}
+                                    to="/events"
                                 >
                                     Events
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a
@@ -99,7 +101,7 @@ function Home() {
                                     className={`text-white block py-2 px-4 border-2 ${activeLink === 'Contact Us' ? 'border-white' : 'border-transparent'} rounded-md`}
                                     onClick={() => handleClick('Contact Us')}
                                 >
-                                    Contact Us
+                                    Our Team
                                 </a>
                             </li>
                             <li>
@@ -131,6 +133,7 @@ function Home() {
                                 <a
                                     className={`text-white block py-2 px-4 border-2 ${activeLink === 'Events' ? 'border-white' : 'border-transparent'} rounded-md`}
                                     onClick={() => handleClick('Events')}
+                                    href='/events'
                                 >
                                     Events
                                 </a>

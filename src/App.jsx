@@ -1,14 +1,18 @@
-import Home from "./pages/Home/Home"
-import Form from "./pages/Form"
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Events from "./pages/Events"
+import Register from './pages/Register';
 function App() {
-
   return (
-    <>
-      <Home />
-      {/* <Form /> */}
-
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={< Events />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
