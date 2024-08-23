@@ -4,7 +4,7 @@ import styles from './Home.module.css';
 import EventSlider from '../../Components/EventSlider';
 import Footer from '../../Components/Footer';
 import { FaBars, FaTimes } from 'react-icons/fa';
-
+import videoplayback from "../../assets/videoplayback.mp4"
 function Home() {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('Home');
@@ -61,7 +61,7 @@ function Home() {
                         className="absolute top-0 left-0 w-full h-full object-cover md:object-top"
                         style={{ transform: 'scale(1.1)', transformOrigin: 'center top' }}
                     >
-                        <source src="/src/assets/videoplayback.mp4" type="video/mp4" />
+                        <source src={videoplayback} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
