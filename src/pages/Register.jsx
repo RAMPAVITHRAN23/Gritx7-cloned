@@ -67,9 +67,9 @@ function Register() {
                                 <span className="font-bold">₹5000</span>
                                 <span className="text-sm">RUNNER</span>
                             </div>
-                            <div className="flex items-center space-x-2">
+                            <div className="flex items-center ">
                                 <span className="text-2xl">📅</span>
-                                <span>Oct. 7</span>
+                                <span> Oct 7</span>
                             </div>
 
                             {/* Remaining items (Mobile) */}
