@@ -2,7 +2,7 @@ import React from 'react';
 import EventCard from '../Components/EventCard';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
-
+import videoplayback from "../assets/videoplayback.mp4"
 function Events() {
     return (
         <div className="relative w-full overflow-hidden">
@@ -13,7 +13,7 @@ function Events() {
                 muted
                 className="absolute top-0 left-0 w-full h-full object-cover z-0"
             >
-                <source src="/src/assets/videoplayback.mp4" type="video/mp4" />
+                <source src={videoplayback} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 
