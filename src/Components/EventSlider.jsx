@@ -106,7 +106,7 @@ function EventSlider() {
                             <img src={item.img} alt={item.topic} />
                             <div className={`introduce ${showDetail ? 'showDetail' : ''}`}>
                                 <div className="topic text-white">{item.topic}</div>
-                                <div className="des text-white">{item.des}</div>
+                                <div className="des text-white text-justify">{item.des}</div>
                                 <div className='des mt-2'>
                                     <Link to="/register" className='text-white text-lg' onClick={handleKnowMoreClick}>Know More &#8599;</Link>
                                 </div>
