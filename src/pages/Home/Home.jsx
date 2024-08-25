@@ -75,9 +75,11 @@ function Home() {
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
                     <h1 className={`text-center text-3xl md:text-6xl lg:text-5xl font-bold mb-4 animate-pulse ${styles.unkemptregular}`}>SRI SAIRAM ENGINEERING COLLEGE</h1>
                     <h2 className={`text-center text-2xl md:text-4xl lg:text-4xl mb-4 animate-pulse ${styles.unkemptregular}`}>NATIONAL SERVICE SCHEME PRESENTS</h2>
-                    <h1 className={`text-center text-7xl md:text-7xl lg:text-9xl font-bold mb-8 overflow-hidden whitespace-nowrap border-black animate-typing ${styles.unkemptregular}`}>
-                        GRITX 7.0
-                    </h1>
+                    <div className={`font-bold text-sm lg:text-3xl ${styles.container}`}>
+                        <h1 className={`${styles.gritx}`}>GRITX 7.0</h1>
+                        <h1 className={`${styles.gritx}`}>GRITX 7.0</h1>
+                        <h1 className={`${styles.gritx}`}>GRITX 7.0</h1>
+                    </div>
 
                     <div className={`flex justify-center space-x-4 text-center text-lg md:text-xl lg:text-2xl ${styles.unkemptregular}`}>
                         <div className="flex flex-col items-center">
