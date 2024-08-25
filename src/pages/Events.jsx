@@ -1,9 +1,8 @@
 import React from 'react';
 import EventCard from '../Components/EventCard';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
-import { Link } from 'react-router-dom';
-import videoplayback from "../assets/videoplayback.mp4"
 import { useNavigate } from 'react-router-dom';
+import videoplayback from "../assets/videoplayback.mp4";
 
 function Events() {
     const navigate = useNavigate();
@@ -12,13 +11,15 @@ function Events() {
         window.scrollTo(0, 0); // Scroll to the top of the window
         navigate('/'); // Navigate to the home route
     };
+
     return (
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full overflow-hidden bg-gray-900">
             {/* Background Video */}
             <video
                 autoPlay
                 loop
                 muted
+                preload="auto"
                 className="absolute top-0 left-0 w-full h-full object-cover z-0"
             >
                 <source src={videoplayback} type="video/mp4" />
@@ -57,8 +58,7 @@ function Events() {
                             name="Techno Bash"
                             logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
                             description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
-                        />
-                    </div>
+                        />                    </div>
                     <h2 className="text-xl font-semibold text-white mt-10 mb-6">Non Technical</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
                         <EventCard
