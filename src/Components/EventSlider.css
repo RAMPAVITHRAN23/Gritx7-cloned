@@ -43,7 +43,7 @@ header {
     max-width: 90%;
     display: flex;
     justify-content: space-between;
-    margin: auto;
+
     height: 50px;
     align-items: center;
 }

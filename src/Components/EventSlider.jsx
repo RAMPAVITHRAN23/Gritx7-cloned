@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './EventSlider.css'; // Make sure to import the CSS file
 
 function EventSlider() {
@@ -10,6 +11,8 @@ function EventSlider() {
     const nextButtonRef = useRef(null);
     const prevButtonRef = useRef(null);
     const backButtonRef = useRef(null);
+
+    const navigate = useNavigate();
 
     const items = [
         {
@@ -37,6 +40,11 @@ function EventSlider() {
 
     const handleShowDetail = () => {
         setShowDetail(!showDetail);
+    };
+
+    const handleKnowMoreClick = () => {
+        navigate('/register');
+        window.scrollTo(0, 0); // Scroll to the top of the page
     };
 
     useEffect(() => {
@@ -88,8 +96,8 @@ function EventSlider() {
 
     return (
         <div className='Events'>
-            <header className="logo">
-                <div className='text-3xl font-bold text-white'>EVENTS</div>
+            <header className="logo px-5 lg:px-12">
+                <div className='lg:px-5 px-2 text-3xl font-bold text-white'>EVENTS</div>
             </header>
             <div className={`carousel ${showDetail ? 'showDetail' : ''}`} ref={carouselRef}>
                 <div className={`list ${showDetail ? 'showDetail' : ''}`} style={{ transform: `translateX(-${currentIndex * 100}%)` }} ref={listRef}>
@@ -99,6 +107,9 @@ function EventSlider() {
                             <div className={`introduce ${showDetail ? 'showDetail' : ''}`}>
                                 <div className="topic text-white">{item.topic}</div>
                                 <div className="des text-white">{item.des}</div>
+                                <div className='des mt-2'>
+                                    <Link to="/register" className='text-white text-lg' onClick={handleKnowMoreClick}>Know More &#8599;</Link>
+                                </div>
                             </div>
                             <div className={`detail ${showDetail ? 'showDetail' : ''}`}>
                                 <div className="title">RULES & REGULATIONS</div>
