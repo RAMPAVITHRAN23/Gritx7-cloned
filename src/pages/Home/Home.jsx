@@ -83,7 +83,7 @@ function Home() {
                     </h2>
 
                     {/* Glitch Text Container */}
-                    <div className={`font-bold text-sm mb-4 lg:text-4xl ${styles.container}`}>
+                    <div className={`font-bold text-lg mb-4 lg:text-4xl ${styles.container}`}>
                         <h1 className={`${styles.gritx}`}>GRITX 7.0</h1>
                         <h1 className={`${styles.gritx}`}>GRITX 7.0</h1>
                         <h1 className={`${styles.gritx}`}>GRITX 7.0</h1>
