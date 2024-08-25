@@ -10,19 +10,25 @@ function Home() {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('Home');
     const [isSticky, setIsSticky] = useState(false);
-    const [navigateTo, setNavigateTo] = useState(null);
-    const navigate = useNavigate();
-    const location = useLocation();
     const heroRef = useRef(null);
+
     const campusAmbassadorRef = useRef(null);
+    const navigate = useNavigate();
+
+    const handleNavigate = (path) => {
+        window.scrollTo(0, 0); // Scroll to the top of the window
+        navigate('/' + path); // Navigate to the desired route
+        setIsNavOpen(false); // Close mobile nav if open
+    };
 
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
     };
+
     const handleClick = (link, path) => {
         setActiveLink(link);
-        setIsNavOpen(false);
-        if (path) {
+        setIsNavOpen(false); // Close mobile nav if open
+        if (path.startsWith('#')) {
             if (path === '#campusAmbassador') {
                 const offset = 100; // Adjust this value as needed
                 const element = campusAmbassadorRef.current;
@@ -33,33 +39,15 @@ function Home() {
                 const element = document.getElementById('home');
                 const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({ top, behavior: 'smooth' });
-            } else {
-                setNavigateTo(path);
             }
+        } else {
+            handleNavigate(path); // Navigate to different routes
         }
     };
 
-
-    useEffect(() => {
-        if (navigateTo) {
-            navigate(navigateTo);
-            setNavigateTo(null); // Reset navigateTo state
-        }
-    }, [navigateTo, navigate]);
-
-    useEffect(() => {
-        // Scroll to the top manually when the component mounts
-        if (heroRef.current) {
-            window.scrollTo(0, 0);
-        }
-    }, [location]);
-
     const handleScroll = () => {
-        if (window.scrollY > document.querySelector('#hero').offsetHeight) {
-            setIsSticky(true);
-        } else {
-            setIsSticky(false);
-        }
+        const heroHeight = document.querySelector('#hero').offsetHeight;
+        setIsSticky(window.scrollY > heroHeight);
     };
 
     useEffect(() => {
@@ -117,38 +105,37 @@ function Home() {
                     <div className="hidden md:flex-grow md:flex md:justify-end pr-5">
                         <ul className="flex md:flex-row flex-col md:items-center md:gap-8 gap-4">
                             <li>
-                                <a
+                                <button
                                     className={`text-white block py-2 px-4 border-2 ${activeLink === 'Home' ? 'border-white' : 'border-transparent'} rounded-md`}
-                                    onClick={() => handleClick('Home', "#home")}
+                                    onClick={() => handleClick('Home', '#home')}
                                 >
                                     Home
-                                </a>
+                                </button>
                             </li>
                             <li>
-                                <Link
+                                <button
+                                    onClick={() => handleClick('Events', 'events')}
                                     className={`text-white block py-2 px-4 border-2 ${activeLink === 'Events' ? 'border-white' : 'border-transparent'} rounded-md`}
-                                    onClick={() => handleClick('Events', '/events')}
                                 >
                                     Events
-                                </Link>
+                                </button>
                             </li>
                             <li>
-                                <a
+                                <button
                                     className={`text-white block py-2 px-4 border-2 ${activeLink === 'Campus Ambassador' ? 'border-white' : 'border-transparent'} rounded-md`}
                                     onClick={() => handleClick('Campus Ambassador', '#campusAmbassador')}
                                 >
                                     Campus Ambassador
-                                </a>
+                                </button>
                             </li>
                             <li>
-                                <a
+                                <button
                                     className={`text-white block py-2 px-4 border-2 ${activeLink === 'Our Team' ? 'border-white' : 'border-transparent'} rounded-md`}
-                                    onClick={() => handleClick('Our Team')}
+                                    onClick={() => handleClick('Our Team', '/')}
                                 >
                                     Our Team
-                                </a>
+                                </button>
                             </li>
-
                         </ul>
                     </div>
                     <div className="md:hidden flex items-center gap-6">
@@ -163,51 +150,42 @@ function Home() {
             <div className={`fixed top-0 left-0 w-full h-screen bg-[#1D1D1F] flex flex-col items-center justify-center transform transition-transform duration-300 ${isNavOpen ? 'translate-y-0' : 'translate-y-[-100%]'} z-50`}>
                 <ul className="flex flex-col items-center gap-8">
                     <li>
-                        <a
+                        <button
                             className={`text-white block py-2 px-4 border-2 ${activeLink === 'Home' ? 'border-white' : 'border-transparent'} rounded-md`}
-                            onClick={() => handleClick('Home', "#home")}
+                            onClick={() => handleClick('Home', '#home')}
                         >
                             Home
-                        </a>
+                        </button>
                     </li>
-
                     <li>
-                        <Link
+                        <button
                             className={`text-white block py-2 px-4 border-2 ${activeLink === 'Events' ? 'border-white' : 'border-transparent'} rounded-md`}
-                            onClick={() => handleClick('Events', '/events')}
+                            onClick={() => handleClick('Events', 'events')}
                         >
                             Events
-                        </Link>
+                        </button>
                     </li>
                     <li>
-                        <a
+                        <button
                             className={`text-white block py-2 px-4 border-2 ${activeLink === 'Campus Ambassador' ? 'border-white' : 'border-transparent'} rounded-md`}
                             onClick={() => handleClick('Campus Ambassador', '#campusAmbassador')}
                         >
                             Campus Ambassador
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a
-                            className={`text-white block py-2 px-4 border-2 ${activeLink === 'About Us' ? 'border-white' : 'border-transparent'} rounded-md`}
-                            onClick={() => handleClick('About Us')}
+                        <button
+                            className={`text-white block py-2 px-4 border-2 ${activeLink === 'Our Team' ? 'border-white' : 'border-transparent'} rounded-md`}
+                            onClick={() => handleClick('Our Team', '/')}
                         >
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            className={`text-white block py-2 px-4 border-2 ${activeLink === 'Connect With Us' ? 'border-white' : 'border-transparent'} rounded-md`}
-                            onClick={() => handleClick('Connect With Us')}
-                        >
-                            Connect With Us
-                        </a>
+                            Our Team
+                        </button>
                     </li>
                 </ul>
             </div>
 
             {/* About GRITX 7.0 SECTION */}
-            <section id="home" className={`px-2 py-10 pt-20 lg:px-12 lg:pt-28 lg:pb-20 md:pt-32 ${styles.aboutUs}`}>
+            < section id="home" className={`px-2 py-10 pt-20 lg:px-12 lg:pt-28 lg:pb-20 md:pt-32 ${styles.aboutUs}`}>
                 <div className='flex flex-col md:flex-row items-center'>
                     <div className='w-full md:w-[40%] flex justify-center order-1 md:order-2'>
                         <img className={styles.aboutLogo} src="https://ik.imagekit.io/xetccow0b/phenoix2-removebg-preview.png?updatedAt=1723310421800" alt="Gritx Logo" />
@@ -220,14 +198,14 @@ function Home() {
                         </p>
                     </div>
                 </div>
-            </section>
+            </section >
 
 
             {/* EventSlider Section */}
-            <EventSlider />
+            < EventSlider />
 
             {/* Campus Ambassador */}
-            <section ref={campusAmbassadorRef} id="campusAmbassador" className={`px-2 py-10 lg:px-12 lg:pt-10 lg:pb-20 ${styles.aboutUs}`}>
+            < section ref={campusAmbassadorRef} id="campusAmbassador" className={`px-2 py-10 lg:px-12 lg:pt-10 lg:pb-20 ${styles.aboutUs}`}>
                 <h1 className='px-5 text-3xl font-bold text-white'>Campus Ambassador</h1>
                 <div className='flex flex-col md:flex-row items-center'>
                     <div className='w-full my-10 md:w-[40%] flex justify-center items-center order-1 md:order-2'>
@@ -243,10 +221,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Footer */}
-            <Footer />
+            < Footer />
         </>
     );
 }

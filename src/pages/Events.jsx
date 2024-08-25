@@ -3,7 +3,15 @@ import EventCard from '../Components/EventCard';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
 import videoplayback from "../assets/videoplayback.mp4"
+import { useNavigate } from 'react-router-dom';
+
 function Events() {
+    const navigate = useNavigate();
+
+    const handleNavigateHome = () => {
+        window.scrollTo(0, 0); // Scroll to the top of the window
+        navigate('/'); // Navigate to the home route
+    };
     return (
         <div className="relative w-full overflow-hidden">
             {/* Background Video */}
@@ -23,11 +31,9 @@ function Events() {
             {/* Content */}
             <div className="relative z-20 min-h-screen flex flex-col">
                 <div className="p-6">
-                    <Link to="/">
-                        <button className="absolute top-6 left-6 bg-gray-300 hover:bg-gray-400 text-black font-bold flex items-center justify-center w-12 h-12 rounded-full z-20">
-                            <ArrowLeftIcon className="h-6 w-6" />
-                        </button>
-                    </Link>
+                    <button onClick={handleNavigateHome} className="absolute top-6 left-6 bg-gray-300 hover:bg-gray-400 text-black font-bold flex items-center justify-center w-12 h-12 rounded-full z-20">
+                        <ArrowLeftIcon className="h-6 w-6" />
+                    </button>
                     <div className="flex justify-center">
                         <h1 className="text-2xl font-bold text-white">Events</h1>
                     </div>
