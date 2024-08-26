@@ -265,3 +265,27 @@
 .aboutLogo {
     height: 250px;
 }
+
+/* Navbar */
+/* Add this to your CSS file */
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29, 29, 31, 0.9);
+    /* Slight opacity */
+    z-index: 50;
+    transition: all 0.3s ease;
+}
+
+.navbar-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29, 29, 31, 0.9);
+    /* Slight opacity */
+    z-index: 50;
+    transition: all 0.3s ease;
+}

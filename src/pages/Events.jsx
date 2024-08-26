@@ -77,6 +77,7 @@ function Events() {
                             logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
                             description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
                         />
+
                     </div>
                 </div>
             </div>
