@@ -229,8 +229,8 @@ function Home() {
                             Sairam NSS proudly presents an eagerly awaited occasion, an opportunity to savor the sheer joy of celebrating our commitment to service! Join us as we mark the grand spectacle -GRITX 6.0, offering a diverse array of exclusive events and demanding challenges. Here's your chance to shine by showcasing your unique talents for the surprises and twists that await. We extend a warm invitation to join us in honoring the glory of the noble service we provide through NSS. Our lineup of events will put your wit to the test and measure your grit to succeed. Save the date, put your best foot forward, and show us what you've got! Prepare yourself to seize the well-earned rewards that await. Let's make this celebration an unforgettable experience!
                         </p>
                         <div className='lg:mt-4 mt-4'>
-                            <Link onClick={() => handleClick('Events', '/events')} className='text-white text-lg'>Brochure &#8599;</Link>
-                            <Link onClick={() => handleClick('Events', '/events')} className='text-white text-lg ml-4'>Register &#8599;</Link>
+                            <Link onClick={() => handleClick('Events', 'events')} className='text-white text-lg'>Brochure &#8599;</Link>
+                            <Link onClick={() => handleClick('Events', 'events')} className='text-white text-lg ml-4'>Register &#8599;</Link>
                         </div>
                     </div>
                 </div>

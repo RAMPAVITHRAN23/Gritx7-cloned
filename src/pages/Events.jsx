@@ -43,7 +43,7 @@ function Events() {
                 {/* Event cards */}
                 <div className="p-6 flex flex-col items-center flex-grow">
                     <h2 className="text-xl font-semibold text-white mb-6">Technical</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto">
                         <EventCard
                             name="Echo Fest"
                             logo="https://ik.imagekit.io/xetccow0b/palooza.png?updatedAt=1723049453455"
@@ -60,7 +60,7 @@ function Events() {
                             description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
                         />                    </div>
                     <h2 className="text-xl font-semibold text-white mt-10 mb-6">Non Technical</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto">
                         <EventCard
                             name="Echo Fest"
                             logo="https://ik.imagekit.io/xetccow0b/palooza.png?updatedAt=1723049453455"
