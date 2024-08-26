@@ -46,12 +46,16 @@ function Home() {
     };
 
     const handleScroll = () => {
-        if (window.scrollY > document.getElementById('hero').offsetHeight) {
+        const heroHeight = document.getElementById('hero').offsetHeight;
+        const offset = 50; // Offset in pixels
+
+        if (window.scrollY > heroHeight - offset) {
             setIsSticky(true);
         } else {
             setIsSticky(false);
         }
     };
+
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -61,7 +65,7 @@ function Home() {
     return (
         <>
             {/* Hero Section */}
-            <div id="hero" className="relative w-full h-[90vh] overflow-hidden flex items-center justify-center" ref={heroRef}>
+            <div id="hero" className="relative w-full h-[100vh] overflow-hidden flex items-center justify-center" ref={heroRef}>
                 {/* Video Background */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                     <video
@@ -111,7 +115,7 @@ function Home() {
             </div>
 
             {/* Navbar section */}
-            <nav className={`transition-transform duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 bg-[#1D1D1F] text-white py-4 z-50' : 'absolute bottom-0 left-0 right-0 bg-[#1D1D1F] text-white py-4'}`}>
+            <nav className={`transition-transform duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 bg-[#1D1D1F]/80 text-white py-4 z-50' : 'absolute bottom-0 left-0 right-0 bg-[#1D1D1F]/80 text-white py-4'}`}>
                 <div className="container mx-auto flex items-center justify-between">
                     <div className="flex-shrink-0 pl-5 text-lg">
                         <h1 className="text-white">Gritx 7.0</h1>
@@ -161,7 +165,7 @@ function Home() {
             </nav>
 
             {/* Mobile Menu */}
-            <div className={`fixed top-0 left-0 w-full h-screen bg-[#1D1D1F] flex flex-col items-center justify-center transform transition-transform duration-300 ${isNavOpen ? 'translate-y-0' : 'translate-y-[-100%]'} z-50`}>
+            <div className={`fixed top-0 left-0 w-full h-screen bg-[#1D1D1F]/90 flex flex-col items-center justify-center transform transition-transform duration-300 ${isNavOpen ? 'translate-y-0' : 'translate-y-[-100%]'} z-50`}>
                 <ul className="flex flex-col items-center gap-8">
                     <li>
                         <button
@@ -197,8 +201,9 @@ function Home() {
                     </li>
                 </ul>
             </div>
+
             {/* About GRITX 7.0 SECTION */}
-            < section id="home" className={`px-2 py-10 pt-20 lg:px-12 lg:pt-28 lg:pb-20 md:pt-32 ${styles.aboutUs}`}>
+            <section id="home" className={`px-2 py-10 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
                 <div className='flex flex-col md:flex-row items-center'>
                     <div className='w-full md:w-[40%] flex justify-center order-1 md:order-2'>
                         <img className={styles.aboutLogo} src="https://ik.imagekit.io/xetccow0b/phenoix2-removebg-preview.png?updatedAt=1723310421800" alt="Gritx Logo" />
@@ -211,7 +216,7 @@ function Home() {
                         </p>
                     </div>
                 </div>
-            </section >
+            </section>
 
 
             {/* EventSlider Section */}
