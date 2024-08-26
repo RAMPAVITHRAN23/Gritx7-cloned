@@ -65,7 +65,7 @@ function Home() {
     return (
         <>
             {/* Hero Section */}
-            <div id="hero" className="relative w-full h-[100vh] overflow-hidden flex items-center justify-center" ref={heroRef}>
+            <div id="hero" className="relative w-full h-[92vh] lg:h-[100vh] overflow-hidden flex items-center justify-center" ref={heroRef}>
                 {/* Video Background */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                     <video
