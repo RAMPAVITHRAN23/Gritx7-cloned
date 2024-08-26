@@ -165,7 +165,7 @@ function Home() {
             </nav>
 
             {/* Mobile Menu */}
-            <div className={`fixed top-0 left-0 w-full h-screen bg-[#1D1D1F]/90 flex flex-col items-center justify-center transform transition-transform duration-300 ${isNavOpen ? 'translate-y-0' : 'translate-y-[-100%]'} z-50`}>
+            <div className={`fixed top-0 left-0 w-full h-screen bg-[#1D1D1F] flex flex-col items-center justify-center transform transition-transform duration-300 ${isNavOpen ? 'translate-y-0' : 'translate-y-[-100%]'} z-50`}>
                 <ul className="flex flex-col items-center gap-8">
                     <li>
                         <button
