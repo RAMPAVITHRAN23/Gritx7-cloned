@@ -4,16 +4,35 @@ import styles from './Home.module.css';
 import EventSlider from '../../Components/EventSlider';
 import Footer from '../../Components/Footer';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import videoplayback from "../../assets/videoplayback.mp4";
-
+import videoplayback from "../../assets/Bvideo.mp4";
+import audio from "../../assets/Audiofinal.m4a"
+import clickAudio from "../../assets/click.wav"
 function Home() {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('Home');
     const [isSticky, setIsSticky] = useState(false);
     const heroRef = useRef(null);
-
+    const clickAudioRef = useRef(null); // Ref for the button click audio
     const campusAmbassadorRef = useRef(null);
     const navigate = useNavigate();
+    const audioRef = useRef(null);
+    const [hasPlayed, setHasPlayed] = useState(false); // State to track if the audio has played
+
+    const handleMouseEnter = () => {
+        if (audioRef.current && !hasPlayed) {
+            audioRef.current.volume = 0.2;
+            audioRef.current.play();
+            setHasPlayed(true); // Set hasPlayed to true after the audio plays
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0; // Reset audio to the start
+            setHasPlayed(false); // Reset hasPlayed when the mouse leaves
+        }
+    };
 
     const handleNavigate = (path) => {
         window.scrollTo(0, 0); // Scroll to the top of the window
@@ -22,12 +41,51 @@ function Home() {
     };
 
     const toggleNav = () => {
-        setIsNavOpen(!isNavOpen);
+
+        const audio = clickAudioRef.current;
+
+        if (audio) {
+            // Check if the audio can play
+            audio.play().then(() => {
+                // Audio has started playing, proceed with navigation
+                setTimeout(() => {
+                    setIsNavOpen(!isNavOpen);
+                }, 10); // Small delay to ensure audio starts playing
+            }).catch(error => {
+                // Handle the error if the audio fails to play
+                console.error('Failed to play audio:', error);
+                proceedWithNavigation(link, path); // Proceed with navigation even if audio fails
+            });
+        } else {
+            proceedWithNavigation(link, path); // If no audio ref, proceed with navigation
+        }
+
     };
 
     const handleClick = (link, path) => {
+        const audio = clickAudioRef.current;
+
+        if (audio) {
+            // Check if the audio can play
+            audio.play().then(() => {
+                // Audio has started playing, proceed with navigation
+                setTimeout(() => {
+                    proceedWithNavigation(link, path);
+                }, 100); // Small delay to ensure audio starts playing
+            }).catch(error => {
+                // Handle the error if the audio fails to play
+                console.error('Failed to play audio:', error);
+                proceedWithNavigation(link, path); // Proceed with navigation even if audio fails
+            });
+        } else {
+            proceedWithNavigation(link, path); // If no audio ref, proceed with navigation
+        }
+    };
+
+    const proceedWithNavigation = (link, path) => {
         setActiveLink(link);
-        setIsNavOpen(false); // Close mobile nav if open
+        setIsNavOpen(false);
+
         if (path.startsWith('#')) {
             if (path === '#campusAmbassador') {
                 const offset = 100; // Adjust this value as needed
@@ -44,6 +102,8 @@ function Home() {
             handleNavigate(path); // Navigate to different routes
         }
     };
+
+
 
     const handleScroll = () => {
         const heroHeight = document.getElementById('hero').offsetHeight;
@@ -129,14 +189,19 @@ function Home() {
                                 >
                                     Home
                                 </button>
+                                <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
+
                             </li>
                             <li>
-                                <button
-                                    onClick={() => handleClick('Events', 'events')}
-                                    className={`text-white block py-2 px-4 border-2 ${activeLink === 'Events' ? 'border-white' : 'border-transparent'} rounded-md`}
-                                >
-                                    Events
-                                </button>
+                                <li>
+                                    <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
+                                    <button
+                                        onClick={() => handleClick('Events', 'events')}
+                                        className={`text-white block py-2 px-4 border-2 ${activeLink === 'Events' ? 'border-white' : 'border-transparent'} rounded-md`}
+                                    >
+                                        Events
+                                    </button>
+                                </li>
                             </li>
                             <li>
                                 <button
@@ -145,21 +210,29 @@ function Home() {
                                 >
                                     Campus Ambassador
                                 </button>
+                                <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
+
                             </li>
                             <li>
+                                <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
+
                                 <button
                                     className={`text-white block py-2 px-4 border-2 ${activeLink === 'Our Team' ? 'border-white' : 'border-transparent'} rounded-md`}
                                     onClick={() => handleClick('Our Team', '/')}
                                 >
                                     Our Team
                                 </button>
+                                <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
+
                             </li>
                         </ul>
                     </div>
                     <div className="md:hidden flex items-center gap-6">
+                        <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
                         <button onClick={toggleNav} className="text-3xl mr-4">
                             {isNavOpen ? <FaTimes /> : <FaBars />}
                         </button>
+
                     </div>
                 </div>
             </nav>
@@ -205,8 +278,15 @@ function Home() {
             {/* About GRITX 7.0 SECTION */}
             <section id="home" className={`px-2 py-10 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
                 <div className='flex flex-col md:flex-row items-center'>
-                    <div className='w-full md:w-[40%] flex justify-center order-1 md:order-2'>
-                        <img className={styles.aboutLogo} src="https://ik.imagekit.io/xetccow0b/phenoix2-removebg-preview.png?updatedAt=1723310421800" alt="Gritx Logo" />
+                    <div className="w-full md:w-[40%] flex justify-center order-1 md:order-2">
+                        <img
+                            className={styles.aboutLogo}
+                            src="https://ik.imagekit.io/xetccow0b/phenoix2-removebg-preview.png?updatedAt=1723310421800"
+                            alt="Gritx Logo"
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        />
+                        <audio ref={audioRef} src={audio} preload="auto" />
                     </div>
                     <div className='w-full md:w-[70%] px-5 order-2 md:order-1'>
                         <h1 className='text-3xl font-bold text-white'>About</h1>

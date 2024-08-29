@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
+import clickSound from "../assets/registerclick.wav"; // Adjust the path to your click sound file
 
 const EventCard = ({ name, logo, description }) => {
   const navigate = useNavigate();
+  const audioRef = useRef(null);
 
   const handleClick = (e) => {
     e.preventDefault(); // Prevent default link behavior
-    window.scrollTo(0, 0); // Scroll to top
-    navigate('/register'); // Navigate to the register page
+
+    // Play the click sound
+    if (audioRef.current) {
+      console.log("Sound is played");
+
+      audioRef.current.play().catch(error => {
+        console.error('Failed to play click sound:', error);
+      });
+    }
+
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      navigate('/register');
+    }, 200);
   };
 
   return (
@@ -26,6 +40,8 @@ const EventCard = ({ name, logo, description }) => {
             Know More
           </a>
         </div>
+        <audio ref={audioRef} src={clickSound} preload="auto" />
+
       </div>
     </StyledWrapper>
   );

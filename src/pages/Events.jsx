@@ -2,7 +2,7 @@ import React from 'react';
 import EventCard from '../Components/EventCard';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
-import videoplayback from "../assets/videoplayback.mp4";
+import videoplayback from "../assets/Bvideo.mp4";
 
 function Events() {
     const navigate = useNavigate();
