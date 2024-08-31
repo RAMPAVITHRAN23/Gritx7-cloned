@@ -93,7 +93,7 @@ function Events() {
                             name="SPRINTX"
                             logo={SPRINTX}
                             description="Gear up for SprintX! 󰝊🏅 Compete in a thrilling sports challenge where teams of two tackle online and offline rounds.Show your athleticism, strategy, and teamwork to claim victory. "
-                            route="/uiux"
+                            route="/sprintx"
                         />
                         <EventCard
                             name="CINIMAX"
