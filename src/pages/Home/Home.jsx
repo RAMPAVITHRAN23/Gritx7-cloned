@@ -457,7 +457,7 @@ function Home() {
             </section>
 
 
-            <section id="contactUs" className={`px-4 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
+            <section id="contactUs" className={`px-4 pb-4 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
                 <div className='px-4 lg:px-6'>
                     {/* <h2 className="text-4xl font-bold text-white mb-12">Contact Us</h2> */}
 
