@@ -10,6 +10,8 @@ import CINIMAX from "../assets/Logos/CINIMAX.png";
 import VOICEVAULT from "../assets/Logos/VOICE VAULT.png"
 import FROZENFRAMES from "../assets/Logos/FROZENFRAMES.png"
 import MONTAJE from "../assets/Logos/MONTAJE.png"
+import { Howl } from 'howler';
+import clickSound from "../assets/registerclick.wav";
 function EventSlider() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showDetail, setShowDetail] = useState(false);
@@ -21,6 +23,23 @@ function EventSlider() {
     const backButtonRef = useRef(null);
 
     const navigate = useNavigate();
+    const sound = new Howl({
+        src: [clickSound],
+        preload: true
+    });
+
+
+    const handleClick = (e) => {
+        e.preventDefault(); // Prevent default link behavior
+
+        // Play the click sound
+        sound.play();
+
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            navigate('/register');
+        }, 200);
+    };
 
     const items = [
         {
@@ -97,6 +116,7 @@ function EventSlider() {
     };
 
     const handleKnowMoreClick = (to) => {
+        sound.play();
         navigate(to);
         window.scrollTo(0, 0); // Scroll to the top of the page
     };
@@ -162,8 +182,15 @@ function EventSlider() {
                                 <div className="topic text-white">{item.topic}</div>
                                 <div className="des text-white text-justify">{item.des}</div>
                                 <div className='des mt-2'>
-                                    <button className='text-white text-lg' onClick={() => handleKnowMoreClick(item.to)}>Know More &#8599;</button>
+                                    <button
+                                        className='bg-gray-200 text-gray-700 text-sm sm:text-base md:text-lg px-2 sm:px-4 py-1 sm:py-2 rounded hover:bg-gray-300 transition-colors duration-300'
+                                        onClick={() => handleKnowMoreClick(item.to)}
+                                    >
+                                        Know More &#8599;
+                                    </button>
+
                                 </div>
+
                             </div>
                             <div className={`detail ${showDetail ? 'showDetail' : ''}`}>
                                 <div className="title">RULES & REGULATIONS</div>

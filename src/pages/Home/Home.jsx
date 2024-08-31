@@ -8,10 +8,11 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import videoplayback from "../../assets/backvideo1.mp4";
 import audioSrc from "../../assets/Audiofinal.m4a";
 import clickAudioSrc from "../../assets/click.wav";
-import TeamCard from '../../Components/TeamCard';
 import Gritx from "../../assets/Logos/Gritx.png"
 import CampusAmbassador from "../../assets/Logos/CAMPUSAMBASSADOR.png"
 import HomeCard from '../../Components/HomeCard';
+import clickSound from "../../assets/registerclick.wav"; // Adjust the path to your click sound file
+
 function Home() {
     const teamMembers = [
         {
@@ -82,6 +83,10 @@ function Home() {
     const clickAudio = new Howl({
         src: [clickAudioSrc],
         preload: true,
+    });
+    const sound = new Howl({
+        src: [clickSound],
+        preload: true
     });
 
     const audio = new Howl({
@@ -400,9 +405,14 @@ function Home() {
 
                         </p>
                         <div className='lg:mt-4 mt-4'>
-                            <Link onClick={() => handleClick('Events', 'events')} className='text-white text-lg'>Brochure &#8599;</Link>
-                            <Link onClick={() => handleClick('Events', 'events')} className='text-white text-lg ml-4'>Register &#8599;</Link>
+                            <Link
+                                onClick={() => handleClick('Events', 'events')}
+                                className='text-gray-700 text-lg  bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-300'
+                            >
+                                Register &#8599;
+                            </Link>
                         </div>
+
                     </div>
                 </div>
             </section >
@@ -427,10 +437,15 @@ function Home() {
                         the success of GritX 7.0 and represent NSS values with pride.
                     </p>
                     {/* Links */}
-                    <div className='lg:mt-4 mt-4'>
-                        <Link onClick={() => handleClick('Events', 'events')} className='text-white text-lg'>Brochure &#8599;</Link>
-                        <Link onClick={() => handleClick('Events', 'events')} className='text-white text-lg ml-4'>Register &#8599;</Link>
+                    <div className='lg:mt-4 mt-4 flex justify-center'>
+                        <Link
+                            onClick={() => handleClick('Events', 'events')}
+                            className='text-gray-700 text-lg  bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-300'
+                        >
+                            Register &#8599;
+                        </Link>
                     </div>
+
                 </div>
             </section>
 

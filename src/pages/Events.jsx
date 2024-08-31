@@ -4,6 +4,15 @@ import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
 import videoplayback from "../assets/Bvideo.mp4";
 import styles from "./Events.module.css"
+import XSCAPEROOM from "../assets/Logos/XSCAPE ROOM.png";
+import EPICSANDEPISODES from "../assets/Logos/EPICSANDEPISODES.png";
+import TECHXPLORE from "../assets/Logos/TECHXPLORE.png"
+import PITCHXPERFECT from "../assets/Logos/PITCHXPERFECT.png";
+import UIUXFORGE from "../assets/Logos/UIUX.png";
+import CINIMAX from "../assets/Logos/CINIMAX.png";
+import VOICEVAULT from "../assets/Logos/VOICE VAULT.png"
+import FROZENFRAMES from "../assets/Logos/FROZENFRAMES.png"
+import MONTAJE from "../assets/Logos/MONTAJE.png"
 function Events() {
     const navigate = useNavigate();
 
@@ -45,20 +54,21 @@ function Events() {
                     <h2 className={`text-3xl font-semibold text-white mb-6 ${styles.faustina}`}>Technical</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto max-w-7xl">
                         <EventCard
-                            name="Echo Fest"
-                            logo="https://ik.imagekit.io/xetccow0b/palooza.png?updatedAt=1723049453455"
-                            description="Participate in GritX 6.0: Submit your IEEE-aligned paper on Agriculture, Medical, Tech, or Environment for in-person research discussions. Elevate academic discourse at this offline event"
+                            name="PITCH-X-PERFECT"
+                            logo={PITCHXPERFECT}
+                            description="Pitch your vision with precision and flair! 🎨💡 Showcase your digital innovation and make every pixel count in this dynamic business pitch event. 🚀✨ "
                         />
                         <EventCard
-                            name="Paper Palooza"
-                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
-                            description="Participate in GritX 6.0: Submit your IEEE-aligned paper on Agriculture, Medical, Tech, or Environment for in-person research discussions. Elevate academic discourse at this offline event"
+                            name="UI/UX FORGE"
+                            logo={UIUXFORGE}
+                            description="Unleash your design genius at UI/UX Forge! 🎨💻 Create stunning interfaces and experiences inspired by innovative themes. 🚀✨ "
                         />
                         <EventCard
-                            name="Techno Bash"
-                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
-                            description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
+                            name="TECH XPLORE"
+                            logo={TECHXPLORE}
+                            description="Pitch your groundbreaking research with impact! 🌍📚 Showcase your work on the 17 SDGs and stand out in this competitive paper cum project presentation event. 🏆✨"
                         />
+
                     </div>
                     <h2 className={`text-3xl font-semibold text-white mt-10 mb-6 ${styles.faustina}`}>Non Technical</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto max-w-7xl">
@@ -77,7 +87,26 @@ function Events() {
                             logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
                             description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
                         />
-
+                        <EventCard
+                            name="Paper Palooza"
+                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
+                            description="Participate in GritX 6.0: Submit your IEEE-aligned paper on Agriculture, Medical, Tech, or Environment for in-person research discussions. Elevate academic discourse at this offline event"
+                        />
+                        <EventCard
+                            name="Techno Bash"
+                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
+                            description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
+                        />
+                        <EventCard
+                            name="Paper Palooza"
+                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
+                            description="Participate in GritX 6.0: Submit your IEEE-aligned paper on Agriculture, Medical, Tech, or Environment for in-person research discussions. Elevate academic discourse at this offline event"
+                        />
+                        <EventCard
+                            name="Techno Bash"
+                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
+                            description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
+                        />
                     </div>
                 </div>
             </div>

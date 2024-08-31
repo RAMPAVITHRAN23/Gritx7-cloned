@@ -27,10 +27,9 @@ const EventCard = ({ name, logo, description }) => {
 
   return (
     <StyledWrapper>
-      <div className="card bg-blue-100">
+      <div className="card bg-blue-950">
         <img src={logo} alt="logo" className="card-logo" />
-        <h2 className="card-title">{name}</h2>
-        <p className="small-desc">{description}</p>
+        <p className="small-desc text-white">{description}</p>
         <div className="button-container">
           <a
             onClick={handleClick}
@@ -67,9 +66,8 @@ const StyledWrapper = styled.div`
   }
 
   .card-logo {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1rem;
+    width: 190px;
+    height: 190px;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -92,7 +90,6 @@ const StyledWrapper = styled.div`
   color: #000000; /* Initially black */
   text-align: center;
   flex-grow: 1; /* Allows description to take up available space */
-  margin: 1em 0; /* Provides some vertical spacing */
   transition: color 0.3s ease; /* Smooth transition for color change *
   margin-bottom: 5px;
 }
