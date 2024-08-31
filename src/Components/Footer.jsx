@@ -48,13 +48,13 @@ const Footer = () => {
                     </div>
 
                     <div className='flex justify-center md:justify-start space-x-4'>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className='text-xl'>
+                        <a href="https://www.instagram.com/sairamnss?igsh=MWVhejhkM2t3N3V4Zw==" target="_blank" rel="noopener noreferrer" className='text-xl'>
                             <FaInstagram />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className='text-xl'>
+                        <a href="https://www.linkedin.com/company/nss-sairam/" target="_blank" rel="noopener noreferrer" className='text-xl'>
                             <FaLinkedin />
                         </a>
-                        <a href="mailto:example@gmail.com" className='text-xl'>
+                        <a href="mailto:gritxnss@sairam.edu.in" className='text-xl'>
                             <FaGoogle />
                         </a>
                     </div>
