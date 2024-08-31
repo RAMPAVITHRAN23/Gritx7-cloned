@@ -4,14 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import { Howl } from 'howler';
 import clickSound from "../assets/registerclick.wav"; // Adjust the path to your click sound file
 
-const EventCard = ({ name, logo, description }) => {
+const EventCard = ({ name, logo, description, route }) => {  // Accept route as a prop
   const navigate = useNavigate();
   const audioRef = useRef(null);
   const sound = new Howl({
     src: [clickSound],
     preload: true
   });
-
 
   const handleClick = (e) => {
     e.preventDefault(); // Prevent default link behavior
@@ -21,7 +20,7 @@ const EventCard = ({ name, logo, description }) => {
 
     setTimeout(() => {
       window.scrollTo(0, 0);
-      navigate('/register');
+      navigate(route);  // Use the route prop here
     }, 200);
   };
 
@@ -31,17 +30,14 @@ const EventCard = ({ name, logo, description }) => {
         <img src={logo} alt="logo" className="card-logo" />
         <p className="small-desc text-white">{description}</p>
         <div className="button-container">
-          <a
+          <button
             onClick={handleClick}
-            href="/register"
-
             className="btn-primary mt-"
           >
             Know More
-          </a>
+          </button>
         </div>
         <audio ref={audioRef} src={clickSound} preload="auto" />
-
       </div>
     </StyledWrapper>
   );
@@ -54,7 +50,7 @@ const StyledWrapper = styled.div`
     justify-content: space-between; /* Space between elements */
     align-items: center;
     width: 320px;
-    height: 420px; /* Fixed height for uniform card size */
+    height: 450px; /* Fixed height for uniform card size */
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 1.5em;
@@ -87,14 +83,13 @@ const StyledWrapper = styled.div`
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #000000; /* Initially black */
+  color:#000000; /* Initially black */
   text-align: center;
   flex-grow: 1; /* Allows description to take up available space */
   transition: color 0.3s ease; /* Smooth transition for color change *
   margin-bottom: 5px;
 }
-
-  .button-container {
+    .button-container {
     margin-top: auto; /* Pushes button to the bottom of the card */
   }
 

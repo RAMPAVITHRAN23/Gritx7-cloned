@@ -57,55 +57,66 @@ function Events() {
                             name="PITCH-X-PERFECT"
                             logo={PITCHXPERFECT}
                             description="Pitch your vision with precision and flair! 🎨💡 Showcase your digital innovation and make every pixel count in this dynamic business pitch event. 🚀✨ "
+                            route="/pitchperfect"
                         />
                         <EventCard
                             name="UI/UX FORGE"
                             logo={UIUXFORGE}
                             description="Unleash your design genius at UI/UX Forge! 🎨💻 Create stunning interfaces and experiences inspired by innovative themes. 🚀✨ "
+                            route="/uiux"
                         />
                         <EventCard
                             name="TECH XPLORE"
                             logo={TECHXPLORE}
                             description="Pitch your groundbreaking research with impact! 🌍📚 Showcase your work on the 17 SDGs and stand out in this competitive paper cum project presentation event. 🏆✨"
+                            route="/techxplore"
                         />
 
                     </div>
                     <h2 className={`text-3xl font-semibold text-white mt-10 mb-6 ${styles.faustina}`}>Non Technical</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto max-w-7xl">
                         <EventCard
-                            name="Echo Fest"
-                            logo="https://ik.imagekit.io/xetccow0b/palooza.png?updatedAt=1723049453455"
-                            description="Participate in GritX 6.0: Submit your IEEE-aligned paper on Agriculture, Medical, Tech, or Environment for in-person research discussions. Elevate academic discourse at this offline event"
+                            name="XSCAPE ROOM"
+                            logo={XSCAPEROOM}
+                            description="Unlock the mystery at Xscape Room🔐! Crack codes, solve riddles, and escape before time runs out󰝋⏰. Can you conquer the ultimate team challenge❓"
+                            route="/xscaperoom"
                         />
                         <EventCard
-                            name="Paper Palooza"
-                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
-                            description="Participate in GritX 6.0: Submit your IEEE-aligned paper on Agriculture, Medical, Tech, or Environment for in-person research discussions. Elevate academic discourse at this offline event"
+                            name="EPICS & EPISODES"
+                            logo={EPICSANDEPISODES}
+                            description="“Beyond Books, Beyond Screens” Books 📚, series 🎬, and TV channels 📺 feature epics that unfold across multiple parts.Journey through captivating episodes that drive the plot forward�"
+                            route="/epicsandepisodes"
                         />
                         <EventCard
-                            name="Techno Bash"
-                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
-                            description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
+                            name="SPRINTX"
+                            logo={UIUXFORGE}
+                            description="Gear up for SprintX! 󰝊🏅 Compete in a thrilling sports challenge where teams of two tackle online and offline rounds.Show your athleticism, strategy, and teamwork to claim victory. "
+                            route="/uiux"
                         />
                         <EventCard
-                            name="Paper Palooza"
-                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
-                            description="Participate in GritX 6.0: Submit your IEEE-aligned paper on Agriculture, Medical, Tech, or Environment for in-person research discussions. Elevate academic discourse at this offline event"
+                            name="CINIMAX"
+                            logo={CINIMAX}
+                            description="Dive into CiniMaX and showcase your cinematic prowess! 🎬✨ Experience a captivating journey through film and music, celebrating the art that moves and inspires."
+                            route="/cinimax"
                         />
                         <EventCard
-                            name="Techno Bash"
-                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
-                            description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
+                            name="VOICE VAULT"
+                            logo={VOICEVAULT}
+                            description="🎤Voice Vault: Unleash Your Voice! 📢Showcase your spontaneity and communication skills Craft and deliver a polished radio segment on the spot ✨"
+                            route="/voicevault"
+                        />
+
+                        <EventCard
+                            name="FROZEN FRAMES"
+                            logo={FROZENFRAMES}
+                            description="“Frames of Hope📸” A Visual Journey Capturing the stark realities of poverty and inequality Contrasts and hopes that shape our world�"
+                            route="/frozenframes"
                         />
                         <EventCard
-                            name="Paper Palooza"
-                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
-                            description="Participate in GritX 6.0: Submit your IEEE-aligned paper on Agriculture, Medical, Tech, or Environment for in-person research discussions. Elevate academic discourse at this offline event"
-                        />
-                        <EventCard
-                            name="Techno Bash"
-                            logo="https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442"
-                            description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
+                            name="MONTAJE"
+                            logo={MONTAJE}
+                            description="“Focus on Change 📹” Documentaries exploring poverty 🌎, education 📚, and ocean conservation 🌊 Visual stories driving positive change for a sustainable future �"
+                            route="/montaje"
                         />
                     </div>
                 </div>
