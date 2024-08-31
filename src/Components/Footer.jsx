@@ -38,7 +38,7 @@ const Footer = () => {
 
                     {/* Contact Details */}
                     <div className='mb-4'>
-                        <p className='text-base font-medium mb-1'>Contact Persons:</p>
+                        <p className='text-base font-medium mb-1'>Contact Us:</p>
                         <ul className=' list-inside text-base'>
                             <li>Dr. G. Sathish kumar - +91 91766 14721 </li>
                             <li>Srinesh Aravindhan - +91 75400 30306</li>
