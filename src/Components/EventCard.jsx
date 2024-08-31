@@ -1,23 +1,23 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
+import { Howl } from 'howler';
 import clickSound from "../assets/registerclick.wav"; // Adjust the path to your click sound file
 
 const EventCard = ({ name, logo, description }) => {
   const navigate = useNavigate();
   const audioRef = useRef(null);
+  const sound = new Howl({
+    src: [clickSound],
+    preload: true
+  });
+
 
   const handleClick = (e) => {
     e.preventDefault(); // Prevent default link behavior
 
     // Play the click sound
-    if (audioRef.current) {
-      console.log("Sound is played");
-
-      audioRef.current.play().catch(error => {
-        console.error('Failed to play click sound:', error);
-      });
-    }
+    sound.play();
 
     setTimeout(() => {
       window.scrollTo(0, 0);
@@ -27,14 +27,15 @@ const EventCard = ({ name, logo, description }) => {
 
   return (
     <StyledWrapper>
-      <div className="card">
+      <div className="card bg-blue-100">
         <img src={logo} alt="logo" className="card-logo" />
         <h2 className="card-title">{name}</h2>
         <p className="small-desc">{description}</p>
         <div className="button-container">
           <a
-            href="/register"
             onClick={handleClick}
+            href="/register"
+
             className="btn-primary mt-"
           >
             Know More
@@ -55,7 +56,6 @@ const StyledWrapper = styled.div`
     align-items: center;
     width: 320px;
     height: 420px; /* Fixed height for uniform card size */
-    background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 1.5em;

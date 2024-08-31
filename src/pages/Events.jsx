@@ -3,7 +3,7 @@ import EventCard from '../Components/EventCard';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import { useNavigate } from 'react-router-dom';
 import videoplayback from "../assets/Bvideo.mp4";
-
+import styles from "./Events.module.css"
 function Events() {
     const navigate = useNavigate();
 
@@ -36,13 +36,13 @@ function Events() {
                         <ArrowLeftIcon className="h-6 w-6" />
                     </button>
                     <div className="flex justify-center">
-                        <h1 className="text-2xl font-bold text-white">Events</h1>
+                        <h1 className={`text-5xl font-bold text-white ${styles.faustina}`}>Events</h1>
                     </div>
                 </div>
 
                 {/* Event cards */}
                 <div className="flex flex-col items-center flex-grow">
-                    <h2 className="text-xl font-semibold text-white mb-6">Technical</h2>
+                    <h2 className={`text-3xl font-semibold text-white mb-6 ${styles.faustina}`}>Technical</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto max-w-7xl">
                         <EventCard
                             name="Echo Fest"
@@ -60,7 +60,7 @@ function Events() {
                             description="Join us for an engaging session on the latest technological trends and innovations. A must-attend event for tech enthusiasts and professionals alike."
                         />
                     </div>
-                    <h2 className="text-xl font-semibold text-white mt-10 mb-6">Non Technical</h2>
+                    <h2 className={`text-3xl font-semibold text-white mt-10 mb-6 ${styles.faustina}`}>Non Technical</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto max-w-7xl">
                         <EventCard
                             name="Echo Fest"

@@ -1,12 +1,18 @@
 /* Container adjustments for centering with flex */
 .container {
-    height: 30vh;
+    height: 25vh;
     /* Adjust height as needed */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     /* Center align glitch text horizontally */
+}
+
+.timer {
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
 }
 
 .gritx {

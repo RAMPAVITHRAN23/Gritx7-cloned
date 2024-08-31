@@ -1,37 +1,108 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Howl } from 'howler';
 import styles from './Home.module.css';
 import EventSlider from '../../Components/EventSlider';
 import Footer from '../../Components/Footer';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import videoplayback from "../../assets/Bvideo.mp4";
-import audio from "../../assets/Audiofinal.m4a"
-import clickAudio from "../../assets/click.wav"
+import videoplayback from "../../assets/backvideo1.mp4";
+import audioSrc from "../../assets/Audiofinal.m4a";
+import clickAudioSrc from "../../assets/click.wav";
+import TeamCard from '../../Components/TeamCard';
 function Home() {
+    const teamMembers = [
+        {
+            name: 'Dr.Sathish Kumar',
+            phoneNumber: '8946432323',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        },
+        {
+            name: 'Faizal',
+            phoneNumber: '1654214454',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        },
+        {
+            name: 'Srinesh',
+            phoneNumber: '2314546178',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        },
+        {
+            name: 'Ram Pavithran',
+            phoneNumber: '2314546178',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        },
+        {
+            name: 'Ram Pavithran',
+            phoneNumber: '2314546178',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        },
+        {
+            name: 'Ram Pavithran',
+            phoneNumber: '2314546178',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        }
+    ];
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('Home');
     const [isSticky, setIsSticky] = useState(false);
     const heroRef = useRef(null);
-    const clickAudioRef = useRef(null); // Ref for the button click audio
     const campusAmbassadorRef = useRef(null);
     const navigate = useNavigate();
-    const audioRef = useRef(null);
     const [hasPlayed, setHasPlayed] = useState(false); // State to track if the audio has played
+    const [timeRemaining, setTimeRemaining] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    });
+
+    const clickAudio = new Howl({
+        src: [clickAudioSrc],
+        preload: true,
+    });
+
+    const audio = new Howl({
+        src: [audioSrc],
+        preload: true,
+        volume: 0.2,
+    });
+
+    useEffect(() => {
+        const targetDate = new Date('September 24, 2024 09:00:00').getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                setTimeRemaining({ days, hours, minutes, seconds });
+            } else {
+                setTimeRemaining({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+            }
+        };
+
+        const intervalId = setInterval(updateCountdown, 1000);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
     const handleMouseEnter = () => {
-        if (audioRef.current && !hasPlayed) {
-            audioRef.current.volume = 0.2;
-            audioRef.current.play();
+        if (!hasPlayed) {
+            audio.play();
             setHasPlayed(true); // Set hasPlayed to true after the audio plays
         }
     };
 
     const handleMouseLeave = () => {
-        if (audioRef.current) {
-            audioRef.current.pause();
-            audioRef.current.currentTime = 0; // Reset audio to the start
-            setHasPlayed(false); // Reset hasPlayed when the mouse leaves
-        }
+        audio.stop();
+        setHasPlayed(false); // Reset hasPlayed when the mouse leaves
     };
 
     const handleNavigate = (path) => {
@@ -41,45 +112,17 @@ function Home() {
     };
 
     const toggleNav = () => {
-
-        const audio = clickAudioRef.current;
-
-        if (audio) {
-            // Check if the audio can play
-            audio.play().then(() => {
-                // Audio has started playing, proceed with navigation
-                setTimeout(() => {
-                    setIsNavOpen(!isNavOpen);
-                }, 10); // Small delay to ensure audio starts playing
-            }).catch(error => {
-                // Handle the error if the audio fails to play
-                console.error('Failed to play audio:', error);
-                proceedWithNavigation(link, path); // Proceed with navigation even if audio fails
-            });
-        } else {
-            proceedWithNavigation(link, path); // If no audio ref, proceed with navigation
-        }
-
+        clickAudio.play();
+        setTimeout(() => {
+            setIsNavOpen(!isNavOpen);
+        }, 10); // Small delay to ensure audio starts playing
     };
 
     const handleClick = (link, path) => {
-        const audio = clickAudioRef.current;
-
-        if (audio) {
-            // Check if the audio can play
-            audio.play().then(() => {
-                // Audio has started playing, proceed with navigation
-                setTimeout(() => {
-                    proceedWithNavigation(link, path);
-                }, 100); // Small delay to ensure audio starts playing
-            }).catch(error => {
-                // Handle the error if the audio fails to play
-                console.error('Failed to play audio:', error);
-                proceedWithNavigation(link, path); // Proceed with navigation even if audio fails
-            });
-        } else {
-            proceedWithNavigation(link, path); // If no audio ref, proceed with navigation
-        }
+        clickAudio.play();
+        setTimeout(() => {
+            proceedWithNavigation(link, path);
+        }, 100); // Small delay to ensure audio starts playing
     };
 
     const proceedWithNavigation = (link, path) => {
@@ -93,8 +136,14 @@ function Home() {
                 const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({ top, behavior: 'smooth' });
             } else if (path === '#home') {
-                const offset = 0; // Adjust this value as needed
+                const offset = 50; // Adjust this value as needed
                 const element = document.getElementById('home');
+                const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+
+            } else if (path === '#contactUs') {
+                const offset = 100; // Adjust offset as needed
+                const element = document.getElementById('contactUs');
                 const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({ top, behavior: 'smooth' });
             }
@@ -102,8 +151,6 @@ function Home() {
             handleNavigate(path); // Navigate to different routes
         }
     };
-
-
 
     const handleScroll = () => {
         const heroHeight = document.getElementById('hero').offsetHeight;
@@ -115,7 +162,6 @@ function Home() {
             setIsSticky(false);
         }
     };
-
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -141,12 +187,15 @@ function Home() {
                 </div>
 
                 {/* Centering Container */}
-                <div className="relative z-10 flex flex-col items-center justify-center text-white text-center">
+                <div className="relative h-[75vh] flex flex-col justify-center items-center text-white text-center">
                     <h1 className={`text-3xl md:text-6xl lg:text-5xl font-bold mb-4 animate-pulse ${styles.unkemptregular}`}>
                         SRI SAIRAM ENGINEERING COLLEGE
                     </h1>
                     <h2 className={`text-2xl md:text-4xl lg:text-4xl mb-4 animate-pulse ${styles.unkemptregular}`}>
-                        NATIONAL SERVICE SCHEME PRESENTS
+                        NATIONAL SERVICE SCHEME
+                    </h2>
+                    <h2 className={`text-2xl md:text-4xl lg:text-4xl mb-4 animate-pulse ${styles.unkemptregular}`}>
+                        PRESENTS
                     </h2>
 
                     {/* Glitch Text Container */}
@@ -157,25 +206,25 @@ function Home() {
                     </div>
 
                     {/* Countdown Timer */}
-                    <div className={`flex justify-center space-x-4 text-lg md:text-xl lg:text-2xl ${styles.unkemptregular}`}>
-                        <div className="flex flex-col items-center">
-                            <span id="days" className="animate-pulse font-bold text-4xl md:text-5xl lg:text-6xl">00</span>
-                            <span className="animate-pulse text-base md:text-lg lg:text-xl">days</span>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <span id="hours" className="animate-pulse font-bold text-4xl md:text-5xl lg:text-6xl">00</span>
-                            <span className="animate-pulse text-base md:text-lg lg:text-xl">hrs</span>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <span id="minutes" className="animate-pulse font-bold text-4xl md:text-5xl lg:text-6xl">00</span>
-                            <span className="animate-pulse text-base md:text-lg lg:text-xl">mins</span>
-                        </div>
+                    <div className={`flex justify-center space-x-4 text-lg md:text-xl lg:text-2xl ${styles.timer}`}>
+                        {['days', 'hours', 'minutes', 'seconds'].map((unit) => (
+                            <div key={unit} className="flex flex-col items-center">
+                                <span
+                                    id={unit}
+                                    className="bg-gray-800 bg-opacity-80 rounded-lg px-4 py-2 animate-pulse font-bold text-4xl md:text-5xl lg:text-6xl"
+                                >
+                                    {formatTime(timeRemaining[unit])}
+                                </span>
+                                <span className="animate-pulse text-base md:text-lg lg:text-xl">{unit}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
 
+
             {/* Navbar section */}
-            <nav className={`transition-transform duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 bg-[#1D1D1F]/80 text-white py-4 z-50' : 'absolute bottom-0 left-0 right-0 bg-[#1D1D1F]/80 text-white py-4'}`}>
+            <nav className={`transition-transform duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 bg-[#1D1D1F]/80 text-white py-3 z-50' : 'absolute bottom-0 left-0 right-0 bg-[#1D1D1F]/80 text-white py-3'}`}>
                 <div className="container mx-auto flex items-center justify-between">
                     <div className="flex-shrink-0 pl-5 text-lg">
                         <h1 className="text-white">Gritx 7.0</h1>
@@ -189,12 +238,10 @@ function Home() {
                                 >
                                     Home
                                 </button>
-                                <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
 
                             </li>
                             <li>
                                 <li>
-                                    <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
                                     <button
                                         onClick={() => handleClick('Events', 'events')}
                                         className={`text-white block py-2 px-4 border-2 ${activeLink === 'Events' ? 'border-white' : 'border-transparent'} rounded-md`}
@@ -210,25 +257,20 @@ function Home() {
                                 >
                                     Campus Ambassador
                                 </button>
-                                <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
 
                             </li>
                             <li>
-                                <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
-
                                 <button
-                                    className={`text-white block py-2 px-4 border-2 ${activeLink === 'Our Team' ? 'border-white' : 'border-transparent'} rounded-md`}
-                                    onClick={() => handleClick('Our Team', '/')}
+                                    className={`text-white block py-2 px-4 border-2 ${activeLink === 'Contact Us' ? 'border-white' : 'border-transparent'} rounded-md`}
+                                    onClick={() => handleClick('Contact Us', '#contactUs')}
                                 >
-                                    Our Team
+                                    Contact Us
                                 </button>
-                                <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
 
                             </li>
                         </ul>
                     </div>
                     <div className="md:hidden flex items-center gap-6">
-                        <audio ref={clickAudioRef} src={clickAudio} preload="auto" />
                         <button onClick={toggleNav} className="text-3xl mr-4">
                             {isNavOpen ? <FaTimes /> : <FaBars />}
                         </button>
@@ -266,10 +308,10 @@ function Home() {
                     </li>
                     <li>
                         <button
-                            className={`text-white block py-2 px-4 border-2 ${activeLink === 'Our Team' ? 'border-white' : 'border-transparent'} rounded-md`}
-                            onClick={() => handleClick('Our Team', '/')}
+                            className={`text-white block py-2 px-4 border-2 ${activeLink === 'Contact Us' ? 'border-white' : 'border-transparent'} rounded-md`}
+                            onClick={() => handleClick('Contact Us', '#contactUs')}
                         >
-                            Our Team
+                            Contact Us
                         </button>
                     </li>
                 </ul>
@@ -286,12 +328,11 @@ function Home() {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         />
-                        <audio ref={audioRef} src={audio} preload="auto" />
                     </div>
                     <div className='w-full md:w-[70%] px-5 order-2 md:order-1'>
                         <h1 className='text-3xl font-bold text-white'>About</h1>
                         <h1 className='text-6xl font-extrabold my-4 text-white'>Gritx 7.0</h1>
-                        <p className='text-justify text-white '>
+                        <p className='text-justify text-white lg:text-lg '>
                             Sairam NSS proudly presents an eagerly awaited occasion, an opportunity to savor the sheer joy of celebrating our commitment to service! Join us as we mark the grand spectacle -GRITX 6.0, offering a diverse array of exclusive events and demanding challenges. Here's your chance to shine by showcasing your unique talents for the surprises and twists that await. We extend a warm invitation to join us in honoring the glory of the noble service we provide through NSS. Our lineup of events will put your wit to the test and measure your grit to succeed. Save the date, put your best foot forward, and show us what you've got! Prepare yourself to seize the well-earned rewards that await. Let's make this celebration an unforgettable experience!
                         </p>
                     </div>
@@ -310,7 +351,7 @@ function Home() {
                         <img className={styles.aboutLogo} src="https://www.gritx.co.in/static/media/campusambassadorlogo.a750b68a66c5b303aee2.png" alt="Gritx Logo" />
                     </div>
                     <div className='w-full md:w-[70%] px-5 order-2 md:order-1'>
-                        <p className='text-justify text-white lg:mt-6 lg:pt-2'>
+                        <p className='text-justify text-white lg:mt-6 lg:pt-2 lg:text-lg'>
                             Sairam NSS proudly presents an eagerly awaited occasion, an opportunity to savor the sheer joy of celebrating our commitment to service! Join us as we mark the grand spectacle -GRITX 6.0, offering a diverse array of exclusive events and demanding challenges. Here's your chance to shine by showcasing your unique talents for the surprises and twists that await. We extend a warm invitation to join us in honoring the glory of the noble service we provide through NSS. Our lineup of events will put your wit to the test and measure your grit to succeed. Save the date, put your best foot forward, and show us what you've got! Prepare yourself to seize the well-earned rewards that await. Let's make this celebration an unforgettable experience!
                         </p>
                         <div className='lg:mt-4 mt-4'>
@@ -319,7 +360,50 @@ function Home() {
                         </div>
                     </div>
                 </div>
+                {/* Contact Us Section */}
             </section >
+            <section id="contactUs" className={`px-4 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
+                <div className='px-4 lg:px-6'>
+                    <h2 className="text-4xl font-bold text-white mb-12">Contact Us</h2>
+
+                    {/* Contact Info */}
+                    <div className="flex flex-col gap-12 lg:gap-16">
+                        <h3 className="text-2xl font-semibold text-white mb-6 text-center">Staff Co-Ordinators</h3>
+
+                        <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-center">
+                            {/* First team member occupying one row */}
+                            <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+                                {teamMembers.length > 0 && (
+                                    <TeamCard
+                                        name={teamMembers[0].name}
+                                        phoneNumber={teamMembers[0].phoneNumber}
+                                        imageUrl={teamMembers[0].imageUrl}
+                                        linkedinUrl={teamMembers[0].linkedinUrl}
+                                    />
+                                )}
+                            </div>
+                        </div>
+
+                        <h3 className="text-2xl font-semibold text-white mb-6 text-center">Student Co-Ordinators</h3>
+
+                        {/* Remaining team members displayed in a grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            {teamMembers.slice(1).map((member, index) => (
+                                <TeamCard
+                                    key={index}
+                                    name={member.name}
+                                    phoneNumber={member.phoneNumber}
+                                    imageUrl={member.imageUrl}
+                                    linkedinUrl={member.linkedinUrl}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
 
             {/* Footer */}
             < Footer />

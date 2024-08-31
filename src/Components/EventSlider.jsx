@@ -124,14 +124,14 @@ function EventSlider() {
                 <div className="arrows">
                     <button
                         id="prev"
-                        className="text-white text-2xl p-4 md:text-3xl md:p-6 lg:text-4xl lg:p-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300"
+                        className="text-black text-2xl p-4 md:text-3xl md:p-6 lg:text-4xl lg:p-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300"
                         ref={prevButtonRef}
                     >
                         &lt;
                     </button>
                     <button
                         id="next"
-                        className="text-white text-2xl p-4 md:text-3xl md:p-6 lg:text-4xl lg:p-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300"
+                        className="text-black text-2xl p-4 md:text-3xl md:p-6 lg:text-4xl lg:p-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300"
                         ref={nextButtonRef}
                     >
                         &gt;

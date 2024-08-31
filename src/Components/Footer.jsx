@@ -33,6 +33,7 @@ const Footer = () => {
                 {/* Connect with Us Div */}
                 <div className='text-center md:text-left mb-4 md:mb-0 w-full md:w-[40%] order-3 md:order-2'>
                     <h1 className='text-lg font-semibold mb-2'>Connect with us</h1>
+                    <h1 className='text-lg font-semibold mb-2'>gritxnss@sairam.edu.in</h1>
                     <p className='mb-2'>Get the latest updates about events and much more ..</p>
                     <div className='flex justify-center md:justify-start space-x-4'>
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className='text-xl'>
