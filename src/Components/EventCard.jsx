@@ -27,7 +27,7 @@ const EventCard = ({ name, logo, description }) => {
 
   return (
     <StyledWrapper>
-      <div className="card bg-blue-950">
+      <div className="card bg-blue-100">
         <img src={logo} alt="logo" className="card-logo" />
         <p className="small-desc text-white">{description}</p>
         <div className="button-container">
