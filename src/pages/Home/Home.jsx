@@ -343,9 +343,7 @@ function Home() {
             {/* About GRITX 7.0 SECTION */}
             <section id="home" className={`px-2 py-20 lg:py-7 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
 
-                <h1 className='text-3xl px-5  font-bold text-white'>About</h1>
-                <h1 className='text-6xl px-5  font-extrabold my-4 text-white'>Gritx 7.0</h1>
-                <div className='flex flex-col md:flex-row items-center'>
+                <div className='flex flex-col md:flex-row items-center mt-5'>
                     <div className="w-full md:w-[35%] flex justify-center  order-1 md:order-2">
                         <img
                             className={`${styles.aboutLogo} mb-0`}
@@ -357,6 +355,9 @@ function Home() {
                     </div>
 
                     <div className='w-full md:w-[80%] px-5 order-2 md:order-1'>
+
+                        <h1 className='text-3xl  font-bold text-white'>About</h1>
+                        <h1 className='text-6xl   font-extrabold my-4 text-white'>Gritx 7.0</h1>
                         <p className='text-justify text-white lg:text-lg '>
                             Sairam NSS is honored to unveil GRITX 7.0, a distinguished symposium that sets the benchmark
                             for excellence and service. This premier event provides a unique arena designed to ignite
