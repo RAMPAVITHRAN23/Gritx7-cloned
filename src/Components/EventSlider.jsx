@@ -1,7 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './EventSlider.css'; // Make sure to import the CSS file
-
+import { useNavigate } from 'react-router-dom';
+import './EventSlider.css';
+import XSCAPEROOM from "../assets/Logos/XSCAPE ROOM.png";
+import EPICSANDEPISODES from "../assets/Logos/EPICSANDEPISODES.png";
+import TECHXPLORE from "../assets/Logos/TECHXPLORE.png"
+import PITCHXPERFECT from "../assets/Logos/PITCHXPERFECT.png";
+import UIUXFORGE from "../assets/Logos/UIUX.png";
+import CINIMAX from "../assets/Logos/CINIMAX.png";
+import VOICEVAULT from "../assets/Logos/VOICE VAULT.png"
+import FROZENFRAMES from "../assets/Logos/FROZENFRAMES.png"
+import MONTAJE from "../assets/Logos/MONTAJE.png"
 function EventSlider() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showDetail, setShowDetail] = useState(false);
@@ -16,18 +24,64 @@ function EventSlider() {
 
     const items = [
         {
-            img: 'https://ik.imagekit.io/xetccow0b/palooza.png?updatedAt=1723049453455',
-            topic: 'InnovUX',
-            des: 'A design showdown is about to begin!! Get ready for a creative clash! Grab up this opportunity to showcase your persuasive design skills and win amazing prizes!!',
-            detail: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry...',
+            img: XSCAPEROOM,
+            topic: 'XSCAPE ROOM',
+            des: 'Unlock the mystery at Xscape Room🔐! Crack codes, solve riddles, and escape before time runs out⏰. Can you conquer the ultimate team challenge❓',
+            to: '/xscaperoom'
         },
         {
-            img: 'https://ik.imagekit.io/xetccow0b/vidcon24logo.png?updatedAt=1723049496442',
-            topic: 'ECHOFEST',
-            des: 'Our charismatic Performers are gearing up to steal the spotlight and take you on a rollercoaster of music, fun, and pure entertainment...',
+            img: EPICSANDEPISODES,
+            topic: ' EPICS & EPISODES',
+            des: '“Beyond Books, Beyond Screens” Books 📚, series 🎬, and TV channels 📺 feature epics that unfold across multiple parts.Journey through captivating episodes that drive the plot forward�',
             detail: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry...',
+            to: '/epicsandepisodes'
+        }, {
+            img: TECHXPLORE,
+            topic: 'TECH-XPLORE',
+            des: 'Pitch your groundbreaking research with impact! 🌍📚 Showcase your work on the 17 SDGs and stand out in this competitive paper cum project presentation event. 🏆✨ Secure your chance to publish in IEEE, win cash prizes, and land top internships!',
+            to: '/techxplore'
         },
-        // Add more items as needed
+        {
+            img: EPICSANDEPISODES,
+            topic: 'SPRINTX',
+            des: "Gear up for SprintX! 󰝊🏅 Compete in a thrilling sports challenge where teams of two tackle online and offline rounds.Show your athleticism, strategy, and teamwork to claim victory and win exciting prizes! 🏆✨",
+            detail: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry...',
+            to: '/epicsandepisodes'
+        }, {
+            img: PITCHXPERFECT,
+            topic: 'PITCHXPERFECT',
+            des: 'Pitch your vision with precision and flair! 🎨💡 Showcase your digital innovation and make every pixel count in this dynamic business pitch event. 🚀✨ ',
+            to: '/pitchxperfect'
+        },
+        {
+            img: UIUXFORGE,
+            topic: "UI / UX FORGE",
+            des: "Unleash your design genius at UI/UX Forge! 🎨💻 Create stunning interfaces and experiences inspired by innovative themes. 🚀✨ Stand out in this live design challenge, and showcase your creativity to win top honors and exclusive opportunities! ",
+            to: '/uiux'
+        }, {
+            img: CINIMAX,
+            topic: 'CINIMAX',
+            des: "Dive into CiniMaX and showcase your cinematic prowess! 🎬✨ Experience a captivating journey through film and music, celebrating the art that moves and inspires.Join us for a whirlwind of creativity and emotion. 🌟�",
+            to: '/cinimax'
+        },
+        {
+            img: VOICEVAULT,
+            topic: 'VOICE VAULT',
+            des: "🎤Voice Vault: Unleash Your Voice! 📢Showcase your spontaneity and communication skills Craft and deliver a polished radio segment on the spot ✨Master the moment and shine as a Radio Jockey!�",
+            to: '/voicevault'
+        }, {
+            img: FROZENFRAMES,
+            topic: 'FROZEN FRAMES',
+            des: "“Frames of Hope📸” A Visual Journey Capturing the stark realities of poverty and inequality Contrasts and hopes that shape our worl�",
+            to: '/frozenframes'
+        },
+        {
+            img: MONTAJE,
+            topic: 'MONTAJE',
+            des: "“Focus on Change 📹” Documentaries exploring poverty 🌎, education 📚, and ocean conservation 🌊 Visual stories driving positive change for a sustainable future �",
+            detail: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry...',
+            to: '/montaje'
+        },
     ];
 
     const handleNext = () => {
@@ -42,8 +96,8 @@ function EventSlider() {
         setShowDetail(!showDetail);
     };
 
-    const handleKnowMoreClick = () => {
-        navigate('/register');
+    const handleKnowMoreClick = (to) => {
+        navigate(to);
         window.scrollTo(0, 0); // Scroll to the top of the page
     };
 
@@ -108,14 +162,14 @@ function EventSlider() {
                                 <div className="topic text-white">{item.topic}</div>
                                 <div className="des text-white text-justify">{item.des}</div>
                                 <div className='des mt-2'>
-                                    <Link to="/register" className='text-white text-lg' onClick={handleKnowMoreClick}>Know More &#8599;</Link>
+                                    <button className='text-white text-lg' onClick={() => handleKnowMoreClick(item.to)}>Know More &#8599;</button>
                                 </div>
                             </div>
                             <div className={`detail ${showDetail ? 'showDetail' : ''}`}>
                                 <div className="title">RULES & REGULATIONS</div>
                                 <div className="des">{item.detail}</div>
                                 <div className="checkout">
-                                    <button className="register">Register</button>
+                                    <button className="register" onClick={() => navigate(item.to)}>Register</button>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +190,6 @@ function EventSlider() {
                     >
                         &gt;
                     </button>
-
                 </div>
             </div>
         </div>
