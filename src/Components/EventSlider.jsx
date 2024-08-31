@@ -10,6 +10,8 @@ import CINIMAX from "../assets/Logos/CINIMAX.png";
 import VOICEVAULT from "../assets/Logos/VOICE VAULT.png"
 import FROZENFRAMES from "../assets/Logos/FROZENFRAMES.png"
 import MONTAJE from "../assets/Logos/MONTAJE.png"
+import SPRINTX from "../assets/Logos/SPRINTX.png"
+
 import { Howl } from 'howler';
 import clickSound from "../assets/registerclick.wav";
 function EventSlider() {
@@ -51,7 +53,7 @@ function EventSlider() {
         {
             img: EPICSANDEPISODES,
             topic: ' EPICS & EPISODES',
-            des: '“Beyond Books, Beyond Screens” Books 📚, series 🎬, and TV channels 📺 feature epics that unfold across multiple parts.Journey through captivating episodes that drive the plot forward�',
+            des: '“Beyond Books, Beyond Screens” Books 📚, series 🎬, and TV channels 📺 feature epics that unfold across multiple parts.Journey through captivating episodes that drive the plot forward',
             detail: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry...',
             to: '/epicsandepisodes'
         }, {
@@ -61,16 +63,16 @@ function EventSlider() {
             to: '/techxplore'
         },
         {
-            img: EPICSANDEPISODES,
+            img: SPRINTX,
             topic: 'SPRINTX',
-            des: "Gear up for SprintX! 󰝊🏅 Compete in a thrilling sports challenge where teams of two tackle online and offline rounds.Show your athleticism, strategy, and teamwork to claim victory and win exciting prizes! 🏆✨",
+            des: "Gear up for SprintX! 🏅 Compete in a thrilling sports challenge where teams of two tackle online and offline rounds.Show your athleticism, strategy, and teamwork to claim victory and win exciting prizes! 🏆✨",
             detail: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry...',
-            to: '/epicsandepisodes'
+            to: '/sprintx'
         }, {
             img: PITCHXPERFECT,
             topic: 'PITCHXPERFECT',
             des: 'Pitch your vision with precision and flair! 🎨💡 Showcase your digital innovation and make every pixel count in this dynamic business pitch event. 🚀✨ ',
-            to: '/pitchxperfect'
+            to: '/pitchperfect'
         },
         {
             img: UIUXFORGE,
@@ -80,24 +82,24 @@ function EventSlider() {
         }, {
             img: CINIMAX,
             topic: 'CINIMAX',
-            des: "Dive into CiniMaX and showcase your cinematic prowess! 🎬✨ Experience a captivating journey through film and music, celebrating the art that moves and inspires.Join us for a whirlwind of creativity and emotion. 🌟�",
+            des: "Dive into CiniMaX and showcase your cinematic prowess! 🎬✨ Experience a captivating journey through film and music, celebrating the art that moves and inspires.Join us for a whirlwind of creativity and emotion. 🌟",
             to: '/cinimax'
         },
         {
             img: VOICEVAULT,
             topic: 'VOICE VAULT',
-            des: "🎤Voice Vault: Unleash Your Voice! 📢Showcase your spontaneity and communication skills Craft and deliver a polished radio segment on the spot ✨Master the moment and shine as a Radio Jockey!�",
+            des: "🎤Voice Vault: Unleash Your Voice! 📢Showcase your spontaneity and communication skills Craft and deliver a polished radio segment on the spot ✨Master the moment and shine as a Radio Jockey!",
             to: '/voicevault'
         }, {
             img: FROZENFRAMES,
             topic: 'FROZEN FRAMES',
-            des: "“Frames of Hope📸” A Visual Journey Capturing the stark realities of poverty and inequality Contrasts and hopes that shape our worl�",
+            des: "“Frames of Hope📸” A Visual Journey Capturing the stark realities of poverty and inequality Contrasts and hopes that shape our world",
             to: '/frozenframes'
         },
         {
             img: MONTAJE,
             topic: 'MONTAJE',
-            des: "“Focus on Change 📹” Documentaries exploring poverty 🌎, education 📚, and ocean conservation 🌊 Visual stories driving positive change for a sustainable future �",
+            des: "“Focus on Change 📹” Documentaries exploring poverty 🌎, education 📚, and ocean conservation 🌊 Visual stories driving positive change for a sustainable future ",
             detail: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry...',
             to: '/montaje'
         },
