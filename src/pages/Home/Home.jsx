@@ -9,6 +9,7 @@ import videoplayback from "../../assets/backvideo1.mp4";
 import audioSrc from "../../assets/Audiofinal.m4a";
 import clickAudioSrc from "../../assets/click.wav";
 import TeamCard from '../../Components/TeamCard';
+import Gritx from "../../assets/Logos/Gritx.png"
 function Home() {
     const teamMembers = [
         {
@@ -323,7 +324,7 @@ function Home() {
                     <div className="w-full md:w-[40%] flex justify-center order-1 md:order-2">
                         <img
                             className={styles.aboutLogo}
-                            src="https://ik.imagekit.io/xetccow0b/phenoix2-removebg-preview.png?updatedAt=1723310421800"
+                            src={Gritx}
                             alt="Gritx Logo"
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
@@ -387,14 +388,13 @@ function Home() {
                         <h3 className="text-2xl font-semibold text-white mb-6 text-center">Student Co-Ordinators</h3>
 
                         {/* Remaining team members displayed in a grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                             {teamMembers.slice(1).map((member, index) => (
                                 <TeamCard
                                     key={index}
                                     name={member.name}
                                     phoneNumber={member.phoneNumber}
                                     imageUrl={member.imageUrl}
-                                    linkedinUrl={member.linkedinUrl}
                                 />
                             ))}
                         </div>
