@@ -15,34 +15,29 @@ import TECHXPLORELOGO from "../../../assets/Logos/TECHXPLORE.png";
 function SprintX() {
 
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/zVEowhGGTn4uvWPT8'
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
         {
-            name: 'Bharath Kumar',
-            imageUrl: BharathKumar, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/bharath-kumar-a9b827225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+            name: 'JERSHILIN THANYA J',
+            imageUrl: JERSHILINTHANYA, // Replace with actual image URLs
+            linkedinUrl: 'https://www.linkedin.com/in/jershilin-thanya-ba0465231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
         },
         {
-            name: 'Deepika C',
-            imageUrl: DEEPIKA, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/deepika-chandrasekar-68198a228/'
+            name: 'MONISHRAJ A',
+            imageUrl: MONISHRAJ, // Replace with actual image URLs
+            linkedinUrl: "https://www.linkedin.com/in/monishraj-a-17372a250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
-            name: 'Hari Rathin M',
-            imageUrl: HARIRATHIN, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/hari-rathin-7bb53a2b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+            name: 'SHARMILA M',
+            imageUrl: SHARMILA, // Replace with actual image URLs
+            linkedinUrl: "https://www.linkedin.com/in/sharmila-murthy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
-            name: 'Meganathan D',
-            imageUrl: MEGANATHAN, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/meganathan-d-064899201?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
-        },
-        {
-            name: 'Yazhini G',
-            imageUrl: YazhiniGaneshkannaa, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/yazhini-g-372051226'
+            name: 'SUNIL RICHARD S',
+            imageUrl: SUNILRICHARD, // Replace with actual image URLs
+            linkedinUrl: "https://www.linkedin.com/in/sunil-richard-s-a18578229/"
         }
     ];
 

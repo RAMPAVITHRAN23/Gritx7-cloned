@@ -12,7 +12,7 @@ import HARISHKUMAR from "./CordinatorPhotos/HARISHKUMAR G.jpg";
 import PITCHPERFECT from "../../../assets/Logos/PITCHXPERFECT.png";
 function PITCHXPERFECT() {
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/E84s52strrFEXAWD8';
+        alert("Registration yet to open");
     };
 
     const teamMembers = [

@@ -16,7 +16,7 @@ import TECHXPLORELOGO from "../../../assets/Logos/TECHXPLORE.png";
 function TECHXPLORE() {
 
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/zVEowhGGTn4uvWPT8'
+        alert("Registration yet to open");
     };
 
     const teamMembers = [

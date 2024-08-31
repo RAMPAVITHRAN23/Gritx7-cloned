@@ -12,7 +12,7 @@ import SWARNALAKSHME from "./CordinatorPhotos/SWARNA LAKSHME V.jpg";
 import UiUx from "../../../assets/Logos/UIUX.png";
 function UiUxForge() {
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/hnAcZkg4jTcoTydQ8';
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
