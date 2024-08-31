@@ -66,7 +66,7 @@ function Home() {
         {
             name: 'Mohammed Thoufik ',
             phoneNumber: '90924 04070',
-            imageUrl: MOHAMMEDTHOUFIK,
+            imageUrl: "",
             linkedInUrl: 'https://www.linkedin.com/in/mohammed-thoufik-s-0ab995225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
         },
         {
