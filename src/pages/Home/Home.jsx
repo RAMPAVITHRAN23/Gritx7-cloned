@@ -341,7 +341,7 @@ function Home() {
             </div>
 
             {/* About GRITX 7.0 SECTION */}
-            <section id="home" className={`px-2 py-20 lg:py-7 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
+            <section id="home" className={`px-2 py-10 lg:py-7 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
 
                 <div className='flex flex-col md:flex-row items-center mt-5'>
                     <div className="w-full md:w-[35%] flex justify-center  order-1 md:order-2">
