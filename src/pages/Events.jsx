@@ -70,7 +70,7 @@ function Events() {
                         />
 
                     </div>
-                    <h2 className={`text-3xl font-semibold text-white mt-10 mb-6 ${styles.faustina}`}>Non Technical Events </h2>
+                    <h2 className={`text-3xl font-semibold text-white mt-10 mb-6 ${styles.faustina}`}>Non Technical Events</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto max-w-7xl">
                         <EventCard
                             name="Echo Fest"
