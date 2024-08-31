@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaGoogle } from 'react-icons/fa';
-
+import gritx from "../assets/Logos/Gritx.png";
 const Footer = () => {
     return (
         <footer className='bg-gray-800 text-white py-6'>
@@ -24,7 +24,7 @@ const Footer = () => {
                 {/* Logo Div */}
                 <div className='mb-4 md:mb-0 flex justify-center md:justify-start order-2 md:order-1'>
                     <img
-                        src="https://ik.imagekit.io/xetccow0b/phenoix2-removebg-preview.png?updatedAt=1723310421800"
+                        src={gritx}
                         alt="Logo"
                         className='w-32 h-auto'
                     />

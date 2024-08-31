@@ -10,8 +10,30 @@ import audioSrc from "../../assets/Audiofinal.m4a";
 import clickAudioSrc from "../../assets/click.wav";
 import TeamCard from '../../Components/TeamCard';
 import Gritx from "../../assets/Logos/Gritx.png"
+import CampusAmbassador from "../../assets/Logos/CAMPUSAMBASSADOR.png"
+import HomeCard from '../../Components/HomeCard';
 function Home() {
     const teamMembers = [
+        {
+            name: 'Dr.Sathish Kumar',
+            phoneNumber: '8946432323',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        },
+        {
+            name: 'Dr.Sathish Kumar',
+            phoneNumber: '8946432323',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        },
+        {
+            name: 'Dr.Sathish Kumar',
+            phoneNumber: '8946432323',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        },
+        {
+            name: 'Dr.Sathish Kumar',
+            phoneNumber: '8946432323',
+            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        },
         {
             name: 'Dr.Sathish Kumar',
             phoneNumber: '8946432323',
@@ -319,22 +341,36 @@ function Home() {
             </div>
 
             {/* About GRITX 7.0 SECTION */}
-            <section id="home" className={`px-2 py-10 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
+            <section id="home" className={`px-2 py-20 lg:py-7 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
+
+                <h1 className='text-3xl px-5  font-bold text-white'>About</h1>
+                <h1 className='text-6xl px-5  font-extrabold my-4 text-white'>Gritx 7.0</h1>
                 <div className='flex flex-col md:flex-row items-center'>
-                    <div className="w-full md:w-[40%] flex justify-center order-1 md:order-2">
+                    <div className="w-full md:w-[35%] flex justify-center  order-1 md:order-2">
                         <img
-                            className={styles.aboutLogo}
+                            className={`${styles.aboutLogo} mb-0`}
                             src={Gritx}
                             alt="Gritx Logo"
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         />
                     </div>
-                    <div className='w-full md:w-[70%] px-5 order-2 md:order-1'>
-                        <h1 className='text-3xl font-bold text-white'>About</h1>
-                        <h1 className='text-6xl font-extrabold my-4 text-white'>Gritx 7.0</h1>
+
+                    <div className='w-full md:w-[80%] px-5 order-2 md:order-1'>
                         <p className='text-justify text-white lg:text-lg '>
-                            Sairam NSS proudly presents an eagerly awaited occasion, an opportunity to savor the sheer joy of celebrating our commitment to service! Join us as we mark the grand spectacle -GRITX 6.0, offering a diverse array of exclusive events and demanding challenges. Here's your chance to shine by showcasing your unique talents for the surprises and twists that await. We extend a warm invitation to join us in honoring the glory of the noble service we provide through NSS. Our lineup of events will put your wit to the test and measure your grit to succeed. Save the date, put your best foot forward, and show us what you've got! Prepare yourself to seize the well-earned rewards that await. Let's make this celebration an unforgettable experience!
+                            Sairam NSS is honored to unveil GRITX 7.0, a distinguished symposium that sets the benchmark
+                            for excellence and service. This premier event provides a unique arena designed to ignite
+                            creativity and advance innovation. Join us in this celebration of dedication, where you can
+                            showcase your talents and contribute to a significant cause .GRITX 7.0 reflects the core values
+                            of the National Service Scheme, offering opportunities to demonstrate your expertise and
+                            contribute significantly to our mission. The symposium celebrates dedication, uniting individuals
+                            who are passionate about service and achievement. We invite you to partake in this exceptional
+                            experience, designed to challenge your strengths and advance your capabilities in an
+                            environment that prioritizes diligence and innovation. The rewards extend beyond accolades,
+                            providing a chance to contribute to a broader, impactful effort.
+                            Mark your calendar and prepare for an event poised to be a pivotal moment in your journey of
+                            professional and personal growth. Let us together make GRITX 7.0 celebration one for the books
+                            !!!
                         </p>
                     </div>
                 </div>
@@ -345,15 +381,22 @@ function Home() {
             < EventSlider />
 
             {/* Campus Ambassador */}
-            < section ref={campusAmbassadorRef} id="campusAmbassador" className={`px-2 py-10 lg:px-12 lg:pt-10 lg:pb-20 ${styles.aboutUs}`}>
-                <h1 className='px-5 text-3xl font-bold text-white'>Campus Ambassador</h1>
+            < section ref={campusAmbassadorRef} id="campusAmbassador" className={`hidden md:flex flex-col md:flex-row items-center px-2 py-10 lg:px-12 lg:pt-10 lg:pb-20 ${styles.aboutUs}`}>
                 <div className='flex flex-col md:flex-row items-center'>
-                    <div className='w-full my-10 md:w-[40%] flex justify-center items-center order-1 md:order-2'>
-                        <img className={styles.aboutLogo} src="https://www.gritx.co.in/static/media/campusambassadorlogo.a750b68a66c5b303aee2.png" alt="Gritx Logo" />
+                    <div className='w-full md:w-[40%] flex justify-center items-start order-1 md:order-2'>
+                        <img className='h-96 w-96' src={CampusAmbassador} alt="Gritx Logo" />
                     </div>
                     <div className='w-full md:w-[70%] px-5 order-2 md:order-1'>
-                        <p className='text-justify text-white lg:mt-6 lg:pt-2 lg:text-lg'>
-                            Sairam NSS proudly presents an eagerly awaited occasion, an opportunity to savor the sheer joy of celebrating our commitment to service! Join us as we mark the grand spectacle -GRITX 6.0, offering a diverse array of exclusive events and demanding challenges. Here's your chance to shine by showcasing your unique talents for the surprises and twists that await. We extend a warm invitation to join us in honoring the glory of the noble service we provide through NSS. Our lineup of events will put your wit to the test and measure your grit to succeed. Save the date, put your best foot forward, and show us what you've got! Prepare yourself to seize the well-earned rewards that await. Let's make this celebration an unforgettable experience!
+                        <h1 className='text-3xl font-bold text-white'>Campus Ambassador</h1>
+
+                        <p className='text-justify text-white lg:mt-4 lg:pt-2 lg:text-lg'>
+                            Take charge as a GritX 7.0 Campus Ambassador and take the lead in energizing our event at your
+                            campus! This role involves leading promotion efforts, increasing registrations, and raising event
+                            visibility. This position is designed to enhance your leadership skills, expand your network, and
+                            earn recognition as you drive registrations and elevate awareness .Experience personal growth by
+                            supporting the National Service Scheme’s mission by joining our team. Apply now to help drive
+                            the success of GritX 7.0 and represent NSS values with pride
+
                         </p>
                         <div className='lg:mt-4 mt-4'>
                             <Link onClick={() => handleClick('Events', 'events')} className='text-white text-lg'>Brochure &#8599;</Link>
@@ -361,8 +404,35 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                {/* Contact Us Section */}
             </section >
+            {/* Campus Ambassador display this on smaller screens */}
+            <section ref={campusAmbassadorRef} id="campusAmbassador" className={`flex md:hidden flex-col items-center px-2 py-10 lg:px-12 lg:pt-10 lg:pb-20 ${styles.aboutUs}`}>
+                {/* Heading */}
+                <div className='w-full px-5 order-1'>
+                    <h1 className='text-3xl font-bold text-white'>Campus Ambassador</h1>
+                </div>
+                {/* Logo */}
+                <div className='w-full flex justify-center items-start order-2'>
+                    <img className='h-72 w-72' src={CampusAmbassador} alt="Gritx Logo" />
+                </div>
+                {/* Paragraph */}
+                <div className='w-full px-5 order-3'>
+                    <p className='text-justify text-white lg:mt-4 lg:pt-2 lg:text-lg'>
+                        Take charge as a GritX 7.0 Campus Ambassador and take the lead in energizing our event at your
+                        campus! This role involves leading promotion efforts, increasing registrations, and raising event
+                        visibility. This position is designed to enhance your leadership skills, expand your network, and
+                        earn recognition as you drive registrations and elevate awareness. Experience personal growth by
+                        supporting the National Service Scheme’s mission by joining our team. Apply now to help drive
+                        the success of GritX 7.0 and represent NSS values with pride.
+                    </p>
+                    {/* Links */}
+                    <div className='lg:mt-4 mt-4'>
+                        <Link onClick={() => handleClick('Events', 'events')} className='text-white text-lg'>Brochure &#8599;</Link>
+                        <Link onClick={() => handleClick('Events', 'events')} className='text-white text-lg ml-4'>Register &#8599;</Link>
+                    </div>
+                </div>
+            </section>
+
             <section id="contactUs" className={`px-4 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
                 <div className='px-4 lg:px-6'>
                     <h2 className="text-4xl font-bold text-white mb-12">Contact Us</h2>
@@ -371,26 +441,25 @@ function Home() {
                     <div className="flex flex-col gap-12 lg:gap-16">
                         <h3 className="text-2xl font-semibold text-white mb-6 text-center">Staff Co-Ordinators</h3>
 
-                        <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-center">
-                            {/* First team member occupying one row */}
-                            <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-                                {teamMembers.length > 0 && (
-                                    <TeamCard
-                                        name={teamMembers[0].name}
-                                        phoneNumber={teamMembers[0].phoneNumber}
-                                        imageUrl={teamMembers[0].imageUrl}
-                                        linkedinUrl={teamMembers[0].linkedinUrl}
-                                    />
-                                )}
-                            </div>
+                        {/* Staff Co-Ordinators */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                            {teamMembers.slice(0, 5).map((member, index) => (
+                                <HomeCard
+                                    key={index}
+                                    name={member.name}
+                                    phoneNumber={member.phoneNumber}
+                                    imageUrl={member.imageUrl}
+                                    linkedinUrl={member.linkedinUrl}
+                                />
+                            ))}
                         </div>
 
                         <h3 className="text-2xl font-semibold text-white mb-6 text-center">Student Co-Ordinators</h3>
 
-                        {/* Remaining team members displayed in a grid */}
+                        {/* Student Co-Ordinators */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                            {teamMembers.slice(1).map((member, index) => (
-                                <TeamCard
+                            {teamMembers.slice(5, 10).map((member, index) => (
+                                <HomeCard
                                     key={index}
                                     name={member.name}
                                     phoneNumber={member.phoneNumber}
@@ -401,6 +470,7 @@ function Home() {
                     </div>
                 </div>
             </section>
+
 
 
 
