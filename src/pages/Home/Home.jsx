@@ -24,7 +24,8 @@ import AzhaguMeenal from "../../assets/Student Cordinator/Azhagu Meenal.jpg"
 import MOHAMMEDTHOUFIK from "../../assets/Student Cordinator/MOHAMMED THOUFIK S.jpg"
 import YazhiniGaneshkannaa from "../../assets/Student Cordinator/Yazhini Ganeshkannaa.jpg"
 import BharathKumar from "../../assets/Student Cordinator/Bharath Kumar.jpg"
-
+import collegelogo from "../../assets/clglogo.png";
+import nsslogo from "../../assets/nsslogo.png";
 function Home() {
     const teamMembers = [
         {
@@ -210,6 +211,8 @@ function Home() {
 
     return (
         <>
+
+
             {/* Hero Section */}
             <div id="hero" className="relative w-full h-[92vh] lg:h-[100vh] overflow-hidden flex items-center justify-center" ref={heroRef}>
                 {/* Video Background */}
@@ -224,6 +227,14 @@ function Home() {
                         <source src={videoplayback} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
+                </div>
+                {/* Logos Container */}
+                <div className="absolute left-0 right-0 top-0 flex justify-between items-center px-4 md:bottom-4 md:top-auto lg:top-0 lg:bottom-auto">
+                    {/* Logo on the left end */}
+                    <img src={collegelogo} alt="Logo 1" className="w-32 h-32 mt-2 lg:mx-0 lg:mt-0" />
+
+                    {/* Logo on the right end */}
+                    <img src={nsslogo} alt="Logo 2" className="w-16 h-16 mr-9 mt-2 lg:mx-7 lg:mt-0" />
                 </div>
 
                 {/* Centering Container */}
@@ -404,13 +415,18 @@ function Home() {
                 id="campusAmbassador"
                 className={`md:flex flex-col md:flex-row items-center px-2 py-10 lg:px-12 lg:pt-10 lg:pb-20 ${styles.aboutUs}`}
             >
-                <div className="flex flex-col md:flex-row items-center">
-                    <h1 className="block md:hidden text-3xl font-bold text-white">
+                <div className="flex flex-col md:flex-row ">
+                    <h1 className="block md:hidden px-5 text-xl text-left lg:text-3xl font-bold text-white">
                         Campus Ambassador
                     </h1>
                     <div className="w-full md:w-[40%] flex justify-center items-start order-1 md:order-2">
-                        <img className="h-96 w-96" src={CampusAmbassador} alt="Campus ambassador Logo" />
+                        <img
+                            className="h-56 w-56 md:h-96 md:w-96"
+                            src={CampusAmbassador}
+                            alt="Campus ambassador Logo"
+                        />
                     </div>
+
                     <div className="w-full md:w-[70%] px-5 order-2 md:order-1">
                         <h1 className="hidden md:block text-3xl font-bold text-white">
                             Campus Ambassador
@@ -427,17 +443,12 @@ function Home() {
                             values with pride.
                         </p>
                         <div className="flex flex-col md:flex-row items-center lg:mt-4 mt-4 space-y-4 md:space-y-0 md:space-x-4">
-                            <button
-                                onClick={() => handleClick("Events", "events")}
-                                className="text-gray-700 text-lg bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-300"
-                            >
-                                Register &#8599;
-                            </button>
+
                             <button
                                 onClick={() => handleClick("Events", "campusambassador")}
                                 className="text-gray-700 text-lg bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-300"
                             >
-                                Know More &#8599;
+                                Register &#8599;
                             </button>
                         </div>
 
@@ -448,11 +459,11 @@ function Home() {
 
             <section id="contactUs" className={`px-4 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
                 <div className='px-4 lg:px-6'>
-                    <h2 className="text-4xl font-bold text-white mb-12">Contact Us</h2>
+                    {/* <h2 className="text-4xl font-bold text-white mb-12">Contact Us</h2> */}
 
                     {/* Contact Info */}
                     <div className="flex flex-col gap-12 lg:gap-16">
-                        <h3 className="text-2xl font-semibold text-white mb-6 text-center">Program Officers</h3>
+                        <h3 className="text-2xl font-semibold text-white mb-6 text-center">NSS Program Officers</h3>
 
                         {/* Staff Co-Ordinators */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">

@@ -29,7 +29,7 @@ function CampusAmbassador() {
         {
             name: 'Nataraj P',
             imageUrl: NATARAJ, // Replace with actual image URLs
-            linkedinUrl: "https://www.linkedin.com/in/nataraj-p"
+            linkedinUrl: "https://www.linkedin.com/in/nataraj-p-456563239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         }
     ];
 
