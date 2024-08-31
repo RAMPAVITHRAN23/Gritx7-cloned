@@ -13,6 +13,7 @@ import FROZENFRAMES from './pages/Event Pages/FROZEN FRAMES/FROZENFRAMES';
 import MONTAJE from './pages/Event Pages/MONTAJE/MONTAJE';
 import TECHXPLORE from './pages/Event Pages/TECHXPLORE/TECHXPLORE';
 import CampusAmbassador from './pages/Event Pages/CAMPUS AMBASSADOR/CampusAmbassador';
+import SprintX from './pages/Event Pages/SprintX/SprintX';
 function App() {
   return (
     <BrowserRouter>
@@ -31,6 +32,7 @@ function App() {
         <Route path="/montaje" element={<MONTAJE />} />
         <Route path="/techxplore" element={<TECHXPLORE />} />
         <Route path="/campusambassador" element={<CampusAmbassador />} />
+        <Route path="/sprintx" element={<SprintX />} />
 
       </Routes>
     </BrowserRouter>

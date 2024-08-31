@@ -13,7 +13,7 @@ import VOICEVAULTLOGO from "../../../assets/Logos/VOICE VAULT.png";
 function VOICEVAULT() {
 
   const handleRegisterClick = () => {
-    window.location.href = 'https://forms.gle/iZmypCEGCgtu5YR98';
+    alert("Registration yet to open");
   };
 
   const teamMembers = [
@@ -111,7 +111,7 @@ function VOICEVAULT() {
               </div>
               <div className="flex items-center space-x-2 col-span-1 md:col-span-1">
                 <span className="text-2xl">👥</span>
-                <span>1</span>
+                <span>2 Mem</span>
               </div>
             </div>
           </div>

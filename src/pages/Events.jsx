@@ -13,6 +13,8 @@ import CINIMAX from "../assets/Logos/CINIMAX.png";
 import VOICEVAULT from "../assets/Logos/VOICE VAULT.png"
 import FROZENFRAMES from "../assets/Logos/FROZENFRAMES.png"
 import MONTAJE from "../assets/Logos/MONTAJE.png"
+import SPRINTX from "../assets/Logos/SPRINTX.png"
+
 function Events() {
     const navigate = useNavigate();
 
@@ -89,7 +91,7 @@ function Events() {
                         />
                         <EventCard
                             name="SPRINTX"
-                            logo={UIUXFORGE}
+                            logo={SPRINTX}
                             description="Gear up for SprintX! 󰝊🏅 Compete in a thrilling sports challenge where teams of two tackle online and offline rounds.Show your athleticism, strategy, and teamwork to claim victory. "
                             route="/uiux"
                         />

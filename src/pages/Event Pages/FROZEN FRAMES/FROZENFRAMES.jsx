@@ -13,7 +13,7 @@ import FROZENFRAMESLOGO from "../../../assets/Logos/FROZENFRAMES.png";
 function FROZENFRAMES() {
 
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/Eb3PNgejGSFzG3Rh6';
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
@@ -26,11 +26,6 @@ function FROZENFRAMES() {
             name: 'Kishore M A',
             imageUrl: KISHORE, // Replace with actual image URLs
             linkedinUrl: 'https://www.linkedin.com/in/kishore2003/'
-        },
-        {
-            name: 'Mohammed Thoufik',
-            imageUrl: MOHAMMEDTHOUFIK, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/mohammed-thoufik-s-0ab995225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
         }
     ];
 
@@ -103,7 +98,7 @@ function FROZENFRAMES() {
                             {/* Third item centered in the second row on mobile */}
                             <div className="flex items-center space-x-2 col-span-2 md:col-span-1 justify-center">
                                 <span className="text-2xl">👥</span>
-                                <span>1</span>
+                                <span>1 Mem</span>
                             </div>
                         </div>
                     </div>

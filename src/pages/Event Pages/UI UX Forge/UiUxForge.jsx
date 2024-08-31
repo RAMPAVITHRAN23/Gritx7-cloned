@@ -21,11 +21,7 @@ function UiUxForge() {
             imageUrl: Abirami, // Replace with actual image URLs
             linkedinUrl: 'https://www.linkedin.com/in/abirami-b-253990225'
         },
-        {
-            name: 'ASWINLAKSHMAN Y',
-            imageUrl: ASWINLAKSHMAN, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/aswin-lakshman-28243b255'
-        },
+
         {
             name: 'RAM PAVITHRAN R P',
             imageUrl: RAMPAVITHRAN, // Replace with actual image URLs
@@ -35,6 +31,11 @@ function UiUxForge() {
             name: 'SWARNA LAKSHME V',
             imageUrl: SWARNALAKSHME, // Replace with actual image URLs
             linkedinUrl: 'https://www.linkedin.com/in/swarna-lakshme-v-583980227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+        },
+        {
+            name: 'ASWINLAKSHMAN Y',
+            imageUrl: ASWINLAKSHMAN, // Replace with actual image URLs
+            linkedinUrl: 'https://www.linkedin.com/in/aswin-lakshman-28243b255'
         }
     ];
 
@@ -115,7 +116,7 @@ function UiUxForge() {
                             </div>
                             <div className="flex items-center space-x-2 col-span-1 md:col-span-1">
                                 <span className="text-2xl">👥</span>
-                                <span>1</span>
+                                <span>2 Mem</span>
                             </div>
                         </div>
                     </div>

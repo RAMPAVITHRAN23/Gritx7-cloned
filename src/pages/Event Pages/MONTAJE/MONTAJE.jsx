@@ -13,23 +13,14 @@ import MONTAJELOGO from "../../../assets/Logos/MONTAJE.png";
 function MONTAJE() {
 
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/ZkNf6QYnY395xfbQ8';
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
-        {
-            name: 'Agalya M',
-            imageUrl: AGALYA, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/agalya-moorthi-2a9058228'
-        },
-        {
-            name: 'Kishore M A',
-            imageUrl: KISHORE, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/kishore2003/'
-        },
+
         {
             name: 'Mohammed Thoufik',
-            imageUrl: MOHAMMEDTHOUFIK, // Replace with actual image URLs
+            imageUrl: "MOHAMMEDTHOUFIK", // Replace with actual image URLs
             linkedinUrl: 'https://www.linkedin.com/in/mohammed-thoufik-s-0ab995225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
         }
     ];
@@ -103,7 +94,7 @@ function MONTAJE() {
                             {/* Third item centered in the second row on mobile */}
                             <div className="flex items-center space-x-2 col-span-2 md:col-span-1 justify-center">
                                 <span className="text-2xl">👥</span>
-                                <span>1</span>
+                                <span>1 Mem</span>
                             </div>
                         </div>
                     </div>

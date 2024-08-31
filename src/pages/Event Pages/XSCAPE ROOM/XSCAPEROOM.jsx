@@ -16,25 +16,17 @@ import VISHAL from "./CordinatorPhotos/VISHAL B.jpg";
 import XSCAPEROOMLOGO from "../../../assets/Logos/XSCAPE ROOM.png";
 function XSCAPEROOM() {
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/jN5xJo8fSHDHUhC1A';
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
-        {
-            name: 'Bharath Kumar',
-            imageUrl: BHARATHKUMAR, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/bharath-kumar-a9b827225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
-        },
+
         {
             name: 'Jayasree M',
             imageUrl: JAYASREE, // Replace with actual image URLs
             linkedinUrl: 'https://www.linkedin.com/in/jayasree-m-09605b228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
         },
-        {
-            name: 'Kirthika V',
-            imageUrl: KIRTHIKA, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/public-profile/settings'
-        },
+
         {
             name: 'Niranjana Devy SJ',
             imageUrl: NiranjanaDevy, // Replace with actual image URLs
@@ -139,7 +131,7 @@ function XSCAPEROOM() {
                             </div>
                             <div className="flex items-center space-x-2 col-span-1 md:col-span-1">
                                 <span className="text-2xl">👥</span>
-                                <span>1</span>
+                                <span>2 Mem</span>
                             </div>
                         </div>
                     </div>
