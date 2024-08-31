@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaGoogle } from 'react-icons/fa';
 import gritx from "../assets/Logos/Gritx.png";
+
 const Footer = () => {
     return (
         <footer className='bg-gray-800 text-white py-6'>
@@ -26,7 +27,7 @@ const Footer = () => {
                     <img
                         src={gritx}
                         alt="Logo"
-                        className='w-32 h-auto'
+                        className='w-48 h-48'
                     />
                 </div>
 
@@ -34,7 +35,18 @@ const Footer = () => {
                 <div className='text-center md:text-left mb-4 md:mb-0 w-full md:w-[40%] order-3 md:order-2'>
                     <h1 className='text-lg font-semibold mb-2'>Connect with us</h1>
                     <h1 className='text-lg font-semibold mb-2'>gritxnss@sairam.edu.in</h1>
-                    <p className='mb-2'>Get the latest updates about events and much more ..</p>
+
+                    {/* Contact Details */}
+                    <div className='mb-4'>
+                        <p className='text-base font-medium mb-1'>Contact Persons:</p>
+                        <ul className=' list-inside text-base'>
+                            <li>Dr. G. Sathish kumar - +91 91766 14721 </li>
+                            <li>Srinesh Aravindhan - +91 75400 30306</li>
+                            <li>Mohammed Thoufik S  - +91 90924 04070</li>
+                            <li>BHARATH KUMAR S - +91 6381 291 332</li>
+                        </ul>
+                    </div>
+
                     <div className='flex justify-center md:justify-start space-x-4'>
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className='text-xl'>
                             <FaInstagram />

@@ -54,31 +54,28 @@ function Home() {
         },
         {
             name: 'SRINESH A',
-            phoneNumber: '75400 30306',
             imageUrl: Srinesh,
-            linkedInUrl: "https://www.linkedin.com/in/srinesh-aravindhan-344019226/"
+            linkedinUrl: "https://www.linkedin.com/in/srinesh-aravindhan-344019226/"
         },
         {
             name: 'Azhagu Meenal',
             imageUrl: AzhaguMeenal,
-            linkedInUrl: "https://www.linkedin.com/in/azhagu-meenal-19897a228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            linkedinUrl: "https://www.linkedin.com/in/azhagu-meenal-19897a228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
             name: 'Mohammed Thoufik ',
-            phoneNumber: '90924 04070',
             imageUrl: "",
-            linkedInUrl: 'https://www.linkedin.com/in/mohammed-thoufik-s-0ab995225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+            linkeidinUrl: 'https://www.linkedin.com/in/mohammed-thoufik-s-0ab995225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
         },
         {
             name: 'Yazhini G',
             imageUrl: YazhiniGaneshkannaa,
-            linkedInUrl: "https://www.linkedin.com/in/yazhini-g-372051226"
+            linkedinUrl: "https://www.linkedin.com/in/yazhini-g-372051226"
         },
         {
             name: 'BHARATH KUMAR S',
-            phoneNumber: '6381 291 332',
             imageUrl: BharathKumar,
-            linkedInUrl: "https://www.linkedin.com/in/bharath-kumar-a9b827225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            linkedinUrl: "https://www.linkedin.com/in/bharath-kumar-a9b827225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         }
     ];
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -437,7 +434,7 @@ function Home() {
                                 Register &#8599;
                             </button>
                             <button
-                                onClick={() => handleClick("Events", "events")}
+                                onClick={() => handleClick("Events", "campusambassador")}
                                 className="text-gray-700 text-lg bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-300"
                             >
                                 Know More &#8599;
@@ -475,12 +472,12 @@ function Home() {
                         {/* Student Co-Ordinators */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                             {teamMembers.slice(5, 10).map((member, index) => (
-                                <HomeCard
+                                <TeamCard
                                     key={index}
                                     name={member.name}
                                     phoneNumber={member.phoneNumber}
                                     imageUrl={member.imageUrl}
-                                    linkedInUrl={member.linkedInUrl}
+                                    linkedinUrl={member.linkedinUrl}
                                 />
                             ))}
                         </div>
