@@ -12,58 +12,73 @@ import Gritx from "../../assets/Logos/Gritx.png"
 import CampusAmbassador from "../../assets/Logos/CAMPUSAMBASSADOR.png"
 import HomeCard from '../../Components/HomeCard';
 import clickSound from "../../assets/registerclick.wav"; // Adjust the path to your click sound file
+import TeamCard from '../../Components/TeamCard';
+import ProgramOfficer from '../../Components/ProgramOfficer';
+import SathishKumar from "../../assets/Program Officers/Sathish Kumar.jpg";
+import UmaMaheshwaran from "../../assets/Program Officers/Uma Maheshwaran.jpg";
+import Vanitha from "../../assets/Program Officers/Vanitha.jpg";
+import Dinesh from "../../assets/Program Officers/Dinesh.jpg";
+import Mohanraj from "../../assets/Program Officers/Mohan Raj.jpg";
+import Srinesh from "../../assets/Student Cordinator/SRINESH A.jpg";
+import AzhaguMeenal from "../../assets/Student Cordinator/Azhagu Meenal.jpg"
+import MOHAMMEDTHOUFIK from "../../assets/Student Cordinator/MOHAMMED THOUFIK S.jpg"
+import YazhiniGaneshkannaa from "../../assets/Student Cordinator/Yazhini Ganeshkannaa.jpg"
+import BharathKumar from "../../assets/Student Cordinator/Bharath Kumar.jpg"
 
 function Home() {
     const teamMembers = [
         {
-            name: 'Dr.Sathish Kumar',
-            phoneNumber: '8946432323',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'Dr. G. Sathish kumar',
+            imageUrl: SathishKumar,
+            linkedinUrl: "https://www.linkedin.com/in/sathishkumar-gangatharan-45785767"
         },
         {
-            name: 'Dr.Sathish Kumar',
-            phoneNumber: '8946432323',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'Dr. S.K. Uma Maheswaran',
+            imageUrl: UmaMaheshwaran,
+            linkedinUrl: "https://www.linkedin.com/in/umamaheswaransk"
         },
         {
-            name: 'Dr.Sathish Kumar',
-            phoneNumber: '8946432323',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'Mrs. M. Vanitha',
+            imageUrl: Vanitha,
+            linkedinUrl: "https://www.linkedin.com/in/vanitha-m-b703341aa",
         },
         {
-            name: 'Dr.Sathish Kumar',
-            phoneNumber: '8946432323',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'Dr. S. Dinesh',
+            imageUrl: Dinesh,
+            linkedinUrl: "https://www.linkedin.com/in/dinesh-selvakumaran-5b1863164"
         },
         {
-            name: 'Dr.Sathish Kumar',
-            phoneNumber: '8946432323',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'Mr. K. Mohan Raj',
+            imageUrl: Mohanraj,
+            linkedinUrl: "https://www.linkedin.com/in/mohan-raj-a292551aa"
         },
         {
-            name: 'Faizal',
-            phoneNumber: '1654214454',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'SRINESH A',
+            phoneNumber: '75400 30306',
+            imageUrl: Srinesh,
+            linkedInUrl: "https://www.linkedin.com/in/srinesh-aravindhan-344019226/"
         },
         {
-            name: 'Srinesh',
-            phoneNumber: '2314546178',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'Azhagu Meenal',
+            imageUrl: AzhaguMeenal,
+            linkedInUrl: "https://www.linkedin.com/in/azhagu-meenal-19897a228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
-            name: 'Ram Pavithran',
-            phoneNumber: '2314546178',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'Mohammed Thoufik ',
+            phoneNumber: '90924 04070',
+            imageUrl: MOHAMMEDTHOUFIK,
+            linkedInUrl: 'https://www.linkedin.com/in/mohammed-thoufik-s-0ab995225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
         },
         {
-            name: 'Ram Pavithran',
-            phoneNumber: '2314546178',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'Yazhini G',
+            imageUrl: YazhiniGaneshkannaa,
+            linkedInUrl: "https://www.linkedin.com/in/yazhini-g-372051226"
         },
         {
-            name: 'Ram Pavithran',
-            phoneNumber: '2314546178',
-            imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URLs
+            name: 'BHARATH KUMAR S',
+            phoneNumber: '6381 291 332',
+            imageUrl: BharathKumar,
+            linkedInUrl: "https://www.linkedin.com/in/bharath-kumar-a9b827225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         }
     ];
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -170,7 +185,7 @@ function Home() {
                 window.scrollTo({ top, behavior: 'smooth' });
 
             } else if (path === '#contactUs') {
-                const offset = 100; // Adjust offset as needed
+                const offset = 0; // Adjust offset as needed
                 const element = document.getElementById('contactUs');
                 const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({ top, behavior: 'smooth' });
@@ -387,67 +402,52 @@ function Home() {
             < EventSlider />
 
             {/* Campus Ambassador */}
-            < section ref={campusAmbassadorRef} id="campusAmbassador" className={`hidden md:flex flex-col md:flex-row items-center px-2 py-10 lg:px-12 lg:pt-10 lg:pb-20 ${styles.aboutUs}`}>
-                <div className='flex flex-col md:flex-row items-center'>
-                    <div className='w-full md:w-[40%] flex justify-center items-start order-1 md:order-2'>
-                        <img className='h-96 w-96' src={CampusAmbassador} alt="Gritx Logo" />
+            <section
+                ref={campusAmbassadorRef}
+                id="campusAmbassador"
+                className={`md:flex flex-col md:flex-row items-center px-2 py-10 lg:px-12 lg:pt-10 lg:pb-20 ${styles.aboutUs}`}
+            >
+                <div className="flex flex-col md:flex-row items-center">
+                    <h1 className="block md:hidden text-3xl font-bold text-white">
+                        Campus Ambassador
+                    </h1>
+                    <div className="w-full md:w-[40%] flex justify-center items-start order-1 md:order-2">
+                        <img className="h-96 w-96" src={CampusAmbassador} alt="Campus ambassador Logo" />
                     </div>
-                    <div className='w-full md:w-[70%] px-5 order-2 md:order-1'>
-                        <h1 className='text-3xl font-bold text-white'>Campus Ambassador</h1>
-
-                        <p className='text-justify text-white lg:mt-4 lg:pt-2 lg:text-lg'>
-                            Take charge as a GritX 7.0 Campus Ambassador and take the lead in energizing our event at your
-                            campus! This role involves leading promotion efforts, increasing registrations, and raising event
-                            visibility. This position is designed to enhance your leadership skills, expand your network, and
-                            earn recognition as you drive registrations and elevate awareness .Experience personal growth by
-                            supporting the National Service Scheme’s mission by joining our team. Apply now to help drive
-                            the success of GritX 7.0 and represent NSS values with pride
-
+                    <div className="w-full md:w-[70%] px-5 order-2 md:order-1">
+                        <h1 className="hidden md:block text-3xl font-bold text-white">
+                            Campus Ambassador
+                        </h1>
+                        <p className="text-justify text-white lg:mt-4 lg:pt-2 lg:text-lg">
+                            Take charge as a GritX 7.0 Campus Ambassador and take the lead in
+                            energizing our event at your campus! This role involves leading
+                            promotion efforts, increasing registrations, and raising event
+                            visibility. This position is designed to enhance your leadership
+                            skills, expand your network, and earn recognition as you drive
+                            registrations and elevate awareness. Experience personal growth by
+                            supporting the National Service Scheme’s mission by joining our team.
+                            Apply now to help drive the success of GritX 7.0 and represent NSS
+                            values with pride.
                         </p>
-                        <div className='lg:mt-4 mt-4'>
-                            <Link
-                                onClick={() => handleClick('Events', 'events')}
-                                className='text-gray-700 text-lg  bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-300'
+                        <div className="flex flex-col md:flex-row items-center lg:mt-4 mt-4 space-y-4 md:space-y-0 md:space-x-4">
+                            <button
+                                onClick={() => handleClick("Events", "events")}
+                                className="text-gray-700 text-lg bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-300"
                             >
                                 Register &#8599;
-                            </Link>
+                            </button>
+                            <button
+                                onClick={() => handleClick("Events", "events")}
+                                className="text-gray-700 text-lg bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-300"
+                            >
+                                Know More &#8599;
+                            </button>
                         </div>
 
                     </div>
                 </div>
-            </section >
-            {/* Campus Ambassador display this on smaller screens */}
-            <section ref={campusAmbassadorRef} id="campusAmbassador" className={`flex md:hidden flex-col items-center px-2 py-10 lg:px-12 lg:pt-10 lg:pb-20 ${styles.aboutUs}`}>
-                {/* Heading */}
-                <div className='w-full px-5 order-1'>
-                    <h1 className='text-3xl font-bold text-white'>Campus Ambassador</h1>
-                </div>
-                {/* Logo */}
-                <div className='w-full flex justify-center items-start order-2'>
-                    <img className='h-72 w-72' src={CampusAmbassador} alt="Gritx Logo" />
-                </div>
-                {/* Paragraph */}
-                <div className='w-full px-5 order-3'>
-                    <p className='text-justify text-white lg:mt-4 lg:pt-2 lg:text-lg'>
-                        Take charge as a GritX 7.0 Campus Ambassador and take the lead in energizing our event at your
-                        campus! This role involves leading promotion efforts, increasing registrations, and raising event
-                        visibility. This position is designed to enhance your leadership skills, expand your network, and
-                        earn recognition as you drive registrations and elevate awareness. Experience personal growth by
-                        supporting the National Service Scheme’s mission by joining our team. Apply now to help drive
-                        the success of GritX 7.0 and represent NSS values with pride.
-                    </p>
-                    {/* Links */}
-                    <div className='lg:mt-4 mt-4 flex justify-center'>
-                        <Link
-                            onClick={() => handleClick('Events', 'events')}
-                            className='text-gray-700 text-lg  bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-colors duration-300'
-                        >
-                            Register &#8599;
-                        </Link>
-                    </div>
-
-                </div>
             </section>
+
 
             <section id="contactUs" className={`px-4 lg:px-12 lg:pb-20 ${styles.aboutUs}`}>
                 <div className='px-4 lg:px-6'>
@@ -455,12 +455,12 @@ function Home() {
 
                     {/* Contact Info */}
                     <div className="flex flex-col gap-12 lg:gap-16">
-                        <h3 className="text-2xl font-semibold text-white mb-6 text-center">Staff Co-Ordinators</h3>
+                        <h3 className="text-2xl font-semibold text-white mb-6 text-center">Program Officers</h3>
 
                         {/* Staff Co-Ordinators */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                             {teamMembers.slice(0, 5).map((member, index) => (
-                                <HomeCard
+                                <ProgramOfficer
                                     key={index}
                                     name={member.name}
                                     phoneNumber={member.phoneNumber}
@@ -480,6 +480,7 @@ function Home() {
                                     name={member.name}
                                     phoneNumber={member.phoneNumber}
                                     imageUrl={member.imageUrl}
+                                    linkedInUrl={member.linkedInUrl}
                                 />
                             ))}
                         </div>
