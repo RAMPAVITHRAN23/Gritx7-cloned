@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaGoogle } from 'react-icons/fa';
 import gritx from "../assets/Logos/Gritx.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
     return (
@@ -44,6 +46,7 @@ const Footer = () => {
                             <li>Srinesh Aravindhan - +91 75400 30306</li>
                             <li>Mohammed Thoufik S  - +91 90924 04070</li>
                             <li>BHARATH KUMAR S - +91 6381 291 332</li>
+                            <FontAwesomeIcon icon={faCalendarDays} />
                         </ul>
                     </div>
 
