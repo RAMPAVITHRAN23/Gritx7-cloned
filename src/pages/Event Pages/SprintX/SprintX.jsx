@@ -9,40 +9,35 @@ import JERSHILINTHANYA from "./CordinatorPhotos/JERSHILIN THANYA J.png"
 import MONISHRAJ from "./CordinatorPhotos/MONISHRAJ A.png"
 import SHARMILA from "./CordinatorPhotos/SHARMILA M.jpg"
 import SUNILRICHARD from "./CordinatorPhotos/SUNIL RICHARD S.jpg"
-import TECHXPLORELOGO from "../../../assets/Logos/TECHXPLORE.png";
+import SPRINTXLOGO from "../../../assets/Logos/SPRINTX.png";
 
 
 function SprintX() {
 
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/zVEowhGGTn4uvWPT8'
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
         {
-            name: 'Bharath Kumar',
-            imageUrl: BharathKumar, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/bharath-kumar-a9b827225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+            name: 'JERSHILIN THANYA J',
+            imageUrl: JERSHILINTHANYA, // Replace with actual image URLs
+            linkedinUrl: 'https://www.linkedin.com/in/jershilin-thanya-ba0465231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
         },
         {
-            name: 'Deepika C',
-            imageUrl: DEEPIKA, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/deepika-chandrasekar-68198a228/'
+            name: 'MONISHRAJ A',
+            imageUrl: MONISHRAJ, // Replace with actual image URLs
+            linkedinUrl: "https://www.linkedin.com/in/monishraj-a-17372a250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
-            name: 'Hari Rathin M',
-            imageUrl: HARIRATHIN, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/hari-rathin-7bb53a2b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+            name: 'SHARMILA M',
+            imageUrl: SHARMILA, // Replace with actual image URLs
+            linkedinUrl: "https://www.linkedin.com/in/sharmila-murthy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
-            name: 'Meganathan D',
-            imageUrl: MEGANATHAN, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/meganathan-d-064899201?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
-        },
-        {
-            name: 'Yazhini G',
-            imageUrl: YazhiniGaneshkannaa, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/yazhini-g-372051226'
+            name: 'SUNIL RICHARD S',
+            imageUrl: SUNILRICHARD, // Replace with actual image URLs
+            linkedinUrl: "https://www.linkedin.com/in/sunil-richard-s-a18578229/"
         }
     ];
 
@@ -76,8 +71,8 @@ function SprintX() {
                         {/* Left side: Image container */}
                         <div className="w-full lg:w-1/2 flex justify-center">
                             <img
-                                src={TECHXPLORELOGO}
-                                alt="TECH XPLORE Logo"
+                                src={SPRINTXLOGO}
+                                alt="SPRINTX Logo"
                                 className="w-[275px] h-[275px]"
                             />
                         </div>
@@ -85,7 +80,7 @@ function SprintX() {
                         {/* Right side: Text and buttons */}
                         <div className="w-full lg:w-1/2 flex flex-col items-center">
                             <div className="text-center">
-                                <h1 className={`text-4xl lg:text-6xl font-bold mb-4 ${styles.faustinaText}`}>TECH-XPLORE</h1>
+                                <h1 className={`text-4xl lg:text-6xl font-bold mb-4 ${styles.faustinaText}`}>SPRINTX</h1>
                                 <div className="flex justify-center flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
                                     <button onClick={handleRegisterClick}
                                         className="bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded">
@@ -103,15 +98,15 @@ function SprintX() {
                         <div className="bg-blue-400 w-full md:w-1/2 text-white p-4 rounded-lg grid grid-cols-3 grid-rows-2 gap-4 md:grid-cols-5 md:grid-rows-1 md:gap-6">
                             {/* First row items (Mobile) */}
                             <div className="flex flex-col items-center">
-                                <span className="font-bold">₹1000</span>
+                                <span className="font-bold">₹750</span>
                                 <span className="text-sm">WINNER</span>
                             </div>
                             <div className="flex flex-col items-center">
-                                <span className="font-bold">₹700</span>
+                                <span className="font-bold">₹500</span>
                                 <span className="text-sm">RUNNER 1</span>
                             </div>
                             <div className="flex flex-col items-center">
-                                <span className="font-bold">₹500</span>
+                                <span className="font-bold">₹300</span>
                                 <span className="text-sm">RUNNER 2</span>
                             </div>
 
@@ -123,7 +118,7 @@ function SprintX() {
                             </div>
                             <div className="flex items-center space-x-2 col-span-1 md:col-span-1">
                                 <span className="text-2xl">👥</span>
-                                <span>1</span>
+                                <span>2 Mem</span>
                             </div>
                         </div>
                     </div>
@@ -131,16 +126,13 @@ function SprintX() {
                     {/* Event description */}
                     <div className="mt-6 text-justify">
                         <p className='text-lg'>
-                            Join TechXplore at GRITX 7.0, an exclusive offline paper presentation event where you
-                            can spotlight your cutting-edge research. Submit your abstract and PowerPoint (PPT) through the
-                            designated Google Form, following the provided PPT format. Selection will be based on the
-                            submitted abstract and PPT, with shortlisted participants invited for the final presentation. We
-                            welcome original research papers aligned with the 17 Sustainable Development Goals (SDGs)
-                            and adhering to IEEE format and guidelines. Additional points will be awarded to participants
-                            who submit a camera-ready paper or prototype. The best three papers will be published in IEEE
-                            with Scopus indexing, offering a prestigious platform for your work. The top three teams will
-                            receive cash prizes, and the best technical teams will be offered internships.
-
+                            SprintX is an exciting sports-based competition where teams of two will test their
+                            athletic skills and teamwork. The event begins with an online round, setting the stage for the
+                            competition, followed by three thrilling offline rounds that will challenge participants in diverse
+                            sports disciplines. Each stage is designed to push your limits and showcase your abilities in both
+                            virtual and real-world settings. Engage in a dynamic and competitive environment, and strive for
+                            excellence as you advance through each round. Join us for an action-packed experience that
+                            combines strategic thinking, physical prowess, and team spirit!
                         </p>
                     </div>
 

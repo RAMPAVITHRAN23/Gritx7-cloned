@@ -5,52 +5,31 @@ import { Link } from 'react-router-dom';
 import videoplayback from "../../../assets/videoplayback.mp4"
 import TeamCard from '../../../Components/TeamCard';
 import styles from "../../Fonts.module.css"
-import BHARATHKUMAR from "./CordinatorPhotos/Bharath Kumar.jpg"
-import JAYASREE from "./CordinatorPhotos/Jayasree M.jpg"
-import KIRTHIKA from "./CordinatorPhotos/KIRTHIKA V.jpg"
-import NiranjanaDevy from "./CordinatorPhotos/Niranjana Devy SJ.jpg";
-import SANTHOSHKUMAR from "./CordinatorPhotos/SANTHOSH KUMAR S.jpg"
-import Sujitha from "./CordinatorPhotos/Sujitha J.jpg"
-import SWATHI from "./CordinatorPhotos/SWATHI K.jpg"
-import VISHAL from "./CordinatorPhotos/VISHAL B.jpg";
-import XSCAPEROOMLOGO from "../../../assets/Logos/XSCAPE ROOM.png";
-function XSCAPEROOM() {
+import AGALYA from "./CordinatorPhotos/AGALYA M.jpg"
+import KIBAR from "./CordinatorPhotos/KIBAR S.jpg"
+import NATARAJ from "./CordinatorPhotos/NATARAJ P.jpg"
+import CAMPUSAMBASSADORLOGO from "../../../assets/Logos/CAMPUSAMBASSADOR.png";
+function CampusAmbassador() {
+
     const handleRegisterClick = () => {
-        alert("Registration yet to open");
+        window.location.href = 'https://forms.gle/rNVPaYmmty9yBz1E9';
     };
 
     const teamMembers = [
-
         {
-            name: 'Jayasree M',
-            imageUrl: JAYASREE, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/jayasree-m-09605b228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
-        },
-
-        {
-            name: 'Niranjana Devy SJ',
-            imageUrl: NiranjanaDevy, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/niranjana-devy-s-j-1056ba242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+            name: 'Agalya M',
+            imageUrl: AGALYA, // Replace with actual image URLs
+            linkedinUrl: 'https://www.linkedin.com/in/agalya-moorthi-2a9058228'
         },
         {
-            name: 'Santhosh Kumar S',
-            imageUrl: SANTHOSHKUMAR, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/santhosh-kumar-0a7ab0325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+            name: 'Kibar S',
+            imageUrl: KIBAR, // Replace with actual image URLs
+            linkedinUrl: "https://www.linkedin.com/in/kibar-s-2a59ba228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         },
         {
-            name: 'Sujitha J',
-            imageUrl: Sujitha, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/sujitha-j-4a0111227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
-        },
-        {
-            name: 'Swathi K',
-            imageUrl: SWATHI, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/swathi-k-74bab6228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
-        },
-        {
-            name: 'Vishal B',
-            imageUrl: VISHAL, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/vishal-b-567a7a22b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+            name: 'Nataraj P',
+            imageUrl: NATARAJ, // Replace with actual image URLs
+            linkedinUrl: "https://www.linkedin.com/in/nataraj-p-456563239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         }
     ];
 
@@ -84,8 +63,8 @@ function XSCAPEROOM() {
                         {/* Left side: Image container */}
                         <div className="w-full lg:w-1/2 flex justify-center">
                             <img
-                                src={XSCAPEROOMLOGO}
-                                alt="XSCAPE ROOM Logo"
+                                src={CAMPUSAMBASSADORLOGO}
+                                alt="CAMPUS AMBASSADORLOGO Logo"
                                 className="w-[275px] h-[275px]"
                             />
                         </div>
@@ -93,7 +72,7 @@ function XSCAPEROOM() {
                         {/* Right side: Text and buttons */}
                         <div className="w-full lg:w-1/2 flex flex-col items-center">
                             <div className="text-center">
-                                <h1 className={`text-4xl lg:text-6xl font-bold mb-4 ${styles.faustinaText}`}>XSCAPE ROOM</h1>
+                                <h1 className={`text-4xl lg:text-6xl font-bold mb-4 ${styles.faustinaText}`}>CAMPUS AMBASSADOR </h1>
                                 <div className="flex justify-center flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
                                     <button onClick={handleRegisterClick}
                                         className="bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded">
@@ -108,43 +87,36 @@ function XSCAPEROOM() {
                     </div>
 
                     <div className="flex justify-center mt-6">
-                        <div className="bg-blue-400 w-full md:w-1/2 text-white p-4 rounded-lg grid grid-cols-3 grid-rows-2 gap-4 md:grid-cols-5 md:grid-rows-1 md:gap-6">
+                        <div className="bg-blue-400  text-white p-4 rounded-lg grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-3 md:grid-rows-1 md:gap-6">
                             {/* First row items (Mobile) */}
                             <div className="flex flex-col items-center">
-                                <span className="font-bold">₹1000</span>
+                                <span className="font-bold">₹500</span>
                                 <span className="text-sm">WINNER</span>
                             </div>
-                            <div className="flex flex-col items-center">
-                                <span className="font-bold">₹700</span>
-                                <span className="text-sm">RUNNER 1</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <span className="font-bold">₹500</span>
-                                <span className="text-sm">RUNNER 2</span>
-                            </div>
 
-
-                            {/* Remaining items (Mobile) */}
-                            <div className="flex items-center space-x-2 col-span-2 md:col-span-1">
+                            <div className="flex items-center justify-center space-x-2 col-span-1">
                                 <span className="text-2xl">📅</span>
-                                <span> Sept 24</span>
+                                <span>Sept 24</span>
                             </div>
-                            <div className="flex items-center space-x-2 col-span-1 md:col-span-1">
+
+                            {/* Third item centered in the second row on mobile */}
+                            <div className="flex items-center space-x-2 col-span-2 md:col-span-1 justify-center">
                                 <span className="text-2xl">👥</span>
-                                <span>2 Mem</span>
+                                <span>1</span>
                             </div>
                         </div>
                     </div>
 
+
                     {/* Event description */}
                     <div className="mt-6 text-justify">
                         <p>
-                            Dive into an adrenaline-pumping adventure! 🕵♂ Gather your team, crack
-                            the codes, and race against the clock to escape the room. ⏳ Are you ready to test your intellect
-                            and teamwork in the ultimate challenge? 🔓 Join the Thrilling Team Challenge! 🔓 Can you
-                            conquer the xscape? This exhilarating event brings together teams to unravel puzzles, tackle
-                            challenges, and solve riddles within a themed, immersive setting. The mission is clear: work
-                            together to unveil secrets, unlock the door, and make your xscape before time runs out.
+                            Take charge as a GritX 7.0 Campus Ambassador and take the lead in energizing our event at your
+                            campus! This role involves leading promotion efforts, increasing registrations, and raising event
+                            visibility. This position is designed to enhance your leadership skills, expand your network, and
+                            earn recognition as you drive registrations and elevate awareness .Experience personal growth by
+                            supporting the National Service Scheme’s mission by joining our team. Apply now to help drive
+                            the success of GritX 7.0 and represent NSS values with pride!
 
                         </p>
                     </div>
@@ -196,5 +168,4 @@ function XSCAPEROOM() {
         </>
     );
 }
-
-export default XSCAPEROOM
+export default CampusAmbassador

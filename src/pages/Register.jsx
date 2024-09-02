@@ -51,7 +51,7 @@ function Register() {
 
                 {/* Back Button */}
                 <Link to="/events">
-                    <button className="absolute top-16 left-5 bg-gray-300 hover:bg-gray-400 text-black font-bold flex items-center justify-center w-12 h-12 rounded-full z-20 hidden md:flex">
+                    <button className="absolute top-16 left-5 bg-gray-300 hover:bg-gray-400 text-black font-bold flex items-center justify-center w-12 h-12 rounded-full z-20 md:flex">
                         <ArrowLeftIcon className="h-6 w-6" />
                     </button>
                 </Link>

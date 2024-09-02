@@ -12,7 +12,7 @@ import DEEPIKA from "./CordinatorPhotos/DEEPIKA.png";
 import Cinimax from "../../../assets/Logos/CINIMAX.png";
 function CINIMAX() {
     const handleRegisterClick = () => {
-        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSd8fIB-80WPdYPRv673DZNlpDf1XG5VviEBpk6YJreQRNArbw/viewform';
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
@@ -115,7 +115,7 @@ function CINIMAX() {
                             </div>
                             <div className="flex items-center space-x-2 col-span-1 md:col-span-1">
                                 <span className="text-2xl">👥</span>
-                                <span>1</span>
+                                <span>2 Mem</span>
                             </div>
                         </div>
                     </div>

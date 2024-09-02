@@ -16,15 +16,10 @@ import TECHXPLORELOGO from "../../../assets/Logos/TECHXPLORE.png";
 function TECHXPLORE() {
 
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/zVEowhGGTn4uvWPT8'
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
-        {
-            name: 'Bharath Kumar',
-            imageUrl: BharathKumar, // Replace with actual image URLs
-            linkedinUrl: 'https://www.linkedin.com/in/bharath-kumar-a9b827225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
-        },
         {
             name: 'Deepika C',
             imageUrl: DEEPIKA, // Replace with actual image URLs
@@ -124,7 +119,7 @@ function TECHXPLORE() {
                             </div>
                             <div className="flex items-center space-x-2 col-span-1 md:col-span-1">
                                 <span className="text-2xl">👥</span>
-                                <span>1</span>
+                                <span>3 Mem</span>
                             </div>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ import HARISHKUMAR from "./CordinatorPhotos/HARISHKUMAR G.jpg";
 import PITCHPERFECT from "../../../assets/Logos/PITCHXPERFECT.png";
 function PITCHXPERFECT() {
     const handleRegisterClick = () => {
-        window.location.href = 'https://forms.gle/E84s52strrFEXAWD8';
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
@@ -115,7 +115,7 @@ function PITCHXPERFECT() {
                             </div>
                             <div className="flex items-center space-x-2 col-span-1 md:col-span-1">
                                 <span className="text-2xl">👥</span>
-                                <span>1</span>
+                                <span>2 Mem</span>
                             </div>
                         </div>
                     </div>

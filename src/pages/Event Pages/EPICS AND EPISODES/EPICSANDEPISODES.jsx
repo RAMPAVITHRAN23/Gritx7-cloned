@@ -15,7 +15,7 @@ import EPICSANDEPISODESLOGO from "../../../assets/Logos/EPICSANDEPISODES.png";
 function EPICSANDEPISODES() {
 
     const handleRegisterClick = () => {
-        window.location.href = "https://forms.gle/CjndJHVTPPDKXQPL6";
+        alert("Registration yet to open");
     };
 
     const teamMembers = [
@@ -123,7 +123,7 @@ function EPICSANDEPISODES() {
                             </div>
                             <div className="flex items-center space-x-2 col-span-1 md:col-span-1">
                                 <span className="text-2xl">👥</span>
-                                <span>1</span>
+                                <span>2 Mem</span>
                             </div>
                         </div>
                     </div>

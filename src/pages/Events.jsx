@@ -13,6 +13,8 @@ import CINIMAX from "../assets/Logos/CINIMAX.png";
 import VOICEVAULT from "../assets/Logos/VOICE VAULT.png"
 import FROZENFRAMES from "../assets/Logos/FROZENFRAMES.png"
 import MONTAJE from "../assets/Logos/MONTAJE.png"
+import SPRINTX from "../assets/Logos/SPRINTX.png"
+
 function Events() {
     const navigate = useNavigate();
 
@@ -51,7 +53,7 @@ function Events() {
 
                 {/* Event cards */}
                 <div className="flex flex-col items-center flex-grow">
-                    <h2 className={`text-3xl font-semibold text-white mb-6 ${styles.faustina}`}>Technical</h2>
+                    <h2 className={`text-3xl font-semibold text-white mb-6 ${styles.faustina}`}>Technical Events </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto max-w-7xl">
                         <EventCard
                             name="PITCH-X-PERFECT"
@@ -73,7 +75,7 @@ function Events() {
                         />
 
                     </div>
-                    <h2 className={`text-3xl font-semibold text-white mt-10 mb-6 ${styles.faustina}`}>Non Technical</h2>
+                    <h2 className={`text-3xl font-semibold text-white mt-10 mb-6 ${styles.faustina}`}>Non Technical Events</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto max-w-7xl">
                         <EventCard
                             name="XSCAPE ROOM"
@@ -89,9 +91,9 @@ function Events() {
                         />
                         <EventCard
                             name="SPRINTX"
-                            logo={UIUXFORGE}
+                            logo={SPRINTX}
                             description="Gear up for SprintX! 󰝊🏅 Compete in a thrilling sports challenge where teams of two tackle online and offline rounds.Show your athleticism, strategy, and teamwork to claim victory. "
-                            route="/uiux"
+                            route="/sprintx"
                         />
                         <EventCard
                             name="CINIMAX"
